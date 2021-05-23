@@ -1,0 +1,13 @@
+  require('core/basic/basicConfig')
+     require'core/config/telescope'
+     require'core/config/nvim-bufferline'
+     require'core/config/galaxyline'
+     require'core/config/dashboard-nvim'
+     require'core/config/nvim-tree'
+     require'core/config/nvim-autopairs'
+     require'core/config/accelerated-jk'
+     require'core/config/vim-operator-surround'
+     require'core/config/indent-blankline'
+     require'core/config/sayonara'
+     require'core/config/gitsigns'
+     require'core/config/nvim-toggleterm'
