@@ -1,5 +1,7 @@
 vim.api.nvim_set_keymap("n","<Tab>",":wincmd w<CR>",{silent = true})
 vim.api.nvim_set_keymap("i","jk","<ESC>",{silent=true})
+vim.api.nvim_set_keymap("n","<C-s>",":w!<CR>",{noremap=true})
+vim.api.nvim_set_keymap("i","<C-s>",":w!<CR>",{noremap=true})
 global_local = {
     termguicolors = true,
     mouse = "nv",

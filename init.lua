@@ -33,9 +33,15 @@
     use {
     "kyazdani42/nvim-tree.lua",
   }
+  use {
+    'AckslD/nvim-whichkey-setup.lua',
+    requires = {'liuchengxu/vim-which-key'},
+}
 
    use "windwp/nvim-autopairs"
    use "rhysd/accelerated-jk" -- more powerful j and k
+   use 'monaqa/dial.nvim'
+   use 'tpope/vim-commentary'
    use "psliwka/vim-smoothie"
      use {
     "rhysd/vim-operator-surround",
@@ -58,14 +64,16 @@
     run = ":TSUpdate",
     requires = {
       {"nvim-treesitter/nvim-treesitter-textobjects", after = "nvim-treesitter"},
-      {"p00f/nvim-ts-rainbow", after = "nvim-treesitter"}
+      {"p00f/nvim-ts-rainbow", after = "nvim-treesitter"},
+      {"folke/lsp-colors.nvim", after = "nvim-treesitter"}
     },
   }
   use{
     "neovim/nvim-lspconfig",
     requires = {
       {"kabouzeid/nvim-lspinstall",after = "nvim-lspconfig"},
-      {"glepnir/lspsaga.nvim",after = "nvim-lspconfig"}
+      {"glepnir/lspsaga.nvim",after = "nvim-lspconfig"},
+      {"JoosepAlviste/nvim-ts-context-commentstring",after = "nvim-lspconfig"}
     },
   }
    use "liuchengxu/vista.vim" -- light-weight lsp client

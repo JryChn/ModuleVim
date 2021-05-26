@@ -9,6 +9,18 @@ require 'nvim-treesitter.configs'.setup{
     enable = true
   },
   rainbow = {
-    enable = true
+    enable = true,
+    extended_mode = true, -- Highlight also non-parentheses delimiters, boolean or table: lang -> boolean
+    max_file_lines = 2000,
   },
+  context_commentstring = {
+    enable = true
+  }
 }
+vim.cmd' packadd lsp-colors.nvim'
+require("lsp-colors").setup({
+  Error = "#db4b4b",
+  Warning = "#e0af68",
+  Information = "#0db9d7",
+  Hint = "#10B981"
+})
