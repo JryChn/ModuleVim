@@ -12,4 +12,4 @@
      require'core/config/gitsigns'
      require'core/config/nvim-toggleterm'
      require'core/config/vim-commentary'
-     require'core/config/vim-which-key'
+     require'core/config/which-key'

@@ -33,10 +33,8 @@
     use {
     "kyazdani42/nvim-tree.lua",
   }
-  use {
-    'AckslD/nvim-whichkey-setup.lua',
-    requires = {'liuchengxu/vim-which-key'},
-}
+  use "folke/which-key.nvim"
+
 
    use "windwp/nvim-autopairs"
    use "rhysd/accelerated-jk" -- more powerful j and k
