@@ -1,0 +1,2 @@
+-- vim.api.nvim_set_keymap("n","<space>cl",":Commentary<CR>",{silent=true})
+-- vim.api.nvim_set_keymap("v","<space>cl",":Commentary<CR>",{silent=true})
