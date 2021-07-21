@@ -1,7 +1,9 @@
+
 local gl = require("galaxyline")
 local gls = gl.section
 
 gl.short_line_list = {" "} -- keeping this table { } as empty will show inactive statuslines
+gl.short_line_list = {"NvimTree","Vista"}
 
 local colors = {
     bg = "#1e222a",
@@ -132,8 +134,27 @@ gls.left[12] = {
     }
 }
 gls.right[1] = {
+    encode = {
+    provider = 'FileEncode',
+    icon = "   ",
+    highlight = {colors.fg, colors.line_bg}
+  }
+}
+gls.right[2] = {
+    lineColumnNumber = {
+    provider = 'LineColumn',
+    icon = "  ",
+    highlight = {colors.fg, colors.line_bg}
+  }
+}
+gls.right[3] = {
     ShowLspClient = {
-    provider = "GetLspClient",
+    provider = function()
+      if require('galaxyline.provider_lsp').get_lsp_client()=='No Active Lsp' then
+        return "   "
+    end
+        return "   "
+    end,
     condition = function()
       local tbl = {["dashboard"] = true, [""] = true}
       if tbl[vim.bo.filetype] then
@@ -141,11 +162,10 @@ gls.right[1] = {
       end
       return true
     end,
-    icon = " :",
-    highlight = {colors.yellow, colors.bg, "bold"}
+    highlight = {colors.fg, colors.line_bg}
   }
 }
-gls.right[2] = {
+gls.right[4] = {
     Space = {
         provider = function()
             return " "
@@ -154,7 +174,7 @@ gls.right[2] = {
     }
 }
 
-gls.right[3] = {
+gls.right[5] = {
     GitIcon = {
         provider = function()
             return "   "
@@ -164,7 +184,7 @@ gls.right[3] = {
     }
 }
 
-gls.right[4] = {
+gls.right[6] = {
     GitBranch = {
         provider = "GitBranch",
         condition = require("galaxyline.provider_vcs").check_git_workspace,
@@ -172,7 +192,7 @@ gls.right[4] = {
     }
 }
 
-gls.right[5] = {
+gls.right[7] = {
     right_LeftRounded = {
         provider = function()
             return ""
@@ -183,7 +203,7 @@ gls.right[5] = {
     }
 }
 
-gls.right[6] = {
+gls.right[8] = {
     ViMode = {
         provider = function()
             local alias = {
@@ -201,7 +221,7 @@ gls.right[6] = {
     }
 }
 
-gls.right[7] = {
+gls.right[9] = {
     PerCent = {
         provider = "LinePercent",
         separator = " ",
@@ -210,7 +230,7 @@ gls.right[7] = {
     }
 }
 
-gls.right[8] = {
+gls.right[10] = {
     rightRounded = {
         provider = function()
             return ""

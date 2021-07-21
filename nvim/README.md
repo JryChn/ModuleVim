@@ -1,2 +1,0 @@
-# ModuleVim
-A NeoVim configuration 
