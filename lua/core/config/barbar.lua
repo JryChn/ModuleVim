@@ -1,4 +1,3 @@
-
 vim.api.nvim_set_keymap("n","\\,",":BufferPrevious<CR>",{silent=true})
 vim.api.nvim_set_keymap("n","\\.",":BufferNext<CR>",{silent=true})
 vim.api.nvim_set_keymap("n","\\1",":BufferGoto 1<CR>",{silent=true})

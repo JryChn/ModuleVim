@@ -83,7 +83,7 @@ global_local = {
     listchars = "tab:»·,nbsp:+,trail:·,extends:→,precedes:←",
     pumblend = 10,
     winblend = 10,
-    -- spell = true,
+    spell = true,
     spelllang = "en_us,cjk",
     }
     buffer={

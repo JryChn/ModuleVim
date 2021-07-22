@@ -14,17 +14,18 @@ require "compe".setup {
     max_menu_width = 100,
     documentation = true,
     source = {
-        path = {kind="﬜",priority=1,true},
-        buffer = {kind = "﬘",priority=4, true},
-        calc = {kind="",priority=1,true},
-        vsnip = {kind = "",priority=2}, --replace to what sign you prefer
-        nvim_lsp = {kind="",priority=1,true},
+        path = {kind="﬜",priority=10,true},
+        buffer = {kind = "﬘",priority=5, true},
+        calc = {kind="",priority=10,true},
+        vsnip = {kind = "",priority=7}, --replace to what sign you prefer
+        nvim_lsp = {kind="",priority=10,true},
         spell = {kind="",priority=4,true},
-        tags = {kind="",priority=2,true},
-        snippets_nvim = {kind="",priority=2,true},
-        treesitter = {kind="",priority=3,true},
-        nvim_lua = {kind="",priority=1,true},
-        tabnine = {priority=3,true}
+        tags = {kind="",priority=9,true},
+        snippets_nvim = {kind="",priority=7,true},
+        treesitter = {kind="",priority=8,true},
+        nvim_lua = {kind="",priority=10,true},
+        tabnine = {priority=6,true},
+        emoji = {kind="",priority=9, true}
     }
 }
 
