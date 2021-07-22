@@ -151,9 +151,9 @@ gls.right[3] = {
     ShowLspClient = {
     provider = function()
       if require('galaxyline.provider_lsp').get_lsp_client()=='No Active Lsp' then
-        return "   "
+        return "  "
     end
-        return "   "
+        return "  "
     end,
     condition = function()
       local tbl = {["dashboard"] = true, [""] = true}
@@ -162,7 +162,7 @@ gls.right[3] = {
       end
       return true
     end,
-    highlight = {colors.fg, colors.line_bg}
+    highlight = {function() if require('galaxyline.provider_lsp').get_lsp_client()=='No Active Lsp' then return colors.red else return colors.green end end, colors.line_bg}
   }
 }
 gls.right[4] = {
@@ -174,25 +174,17 @@ gls.right[4] = {
     }
 }
 
+
 gls.right[5] = {
-    GitIcon = {
-        provider = function()
-            return "   "
-        end,
+    GitBranch = {
+        provider = "GitBranch",
         condition = require("galaxyline.provider_vcs").check_git_workspace,
+        icon = "  ",
         highlight = {colors.green, colors.line_bg}
     }
 }
 
 gls.right[6] = {
-    GitBranch = {
-        provider = "GitBranch",
-        condition = require("galaxyline.provider_vcs").check_git_workspace,
-        highlight = {colors.green, colors.line_bg}
-    }
-}
-
-gls.right[7] = {
     right_LeftRounded = {
         provider = function()
             return ""
@@ -203,7 +195,7 @@ gls.right[7] = {
     }
 }
 
-gls.right[8] = {
+gls.right[7] = {
     ViMode = {
         provider = function()
             local alias = {
@@ -221,7 +213,7 @@ gls.right[8] = {
     }
 }
 
-gls.right[9] = {
+gls.right[8] = {
     PerCent = {
         provider = "LinePercent",
         separator = " ",
@@ -230,7 +222,7 @@ gls.right[9] = {
     }
 }
 
-gls.right[10] = {
+gls.right[9] = {
     rightRounded = {
         provider = function()
             return ""

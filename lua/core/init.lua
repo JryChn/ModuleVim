@@ -114,7 +114,7 @@ function(use)
     
     --------------------------------
     ---------language layer---------
-    --use{ --
+    --use{ --language service protocol client
         --'neovim/nvim-lspconfig',
 	--requires = {
 		--{'kabouzeid/nvim-lspinstall',after = 'nvim-lspconfig'},
@@ -124,23 +124,37 @@ function(use)
             --require 'languages.config.nvim-lspconfig'
         --end
     --} 
-    --use{ --
-        --'hrsh7th/nvim-compe',
-	--requires = {
-		--{'hrsh7th/vim-vsnip',requires = { 'rafamadriz/friendly-snippets'}},
-		--{'hrsh7th/vim-vsnip-integ',after = 'vim-vsnip'},
-		--{'tzachar/compe-tabnine',run = "./install.sh"}
-		--},
+    use{ --auto completion
+        'hrsh7th/nvim-compe',
+	requires = {
+		{'hrsh7th/vim-vsnip',requires = { 'rafamadriz/friendly-snippets'}},
+		{'hrsh7th/vim-vsnip-integ',after = 'vim-vsnip'},
+		{'tzachar/compe-tabnine',run = "./install.sh"}
+		},
+        config = function()
+            require 'languages.config.nvim-compe'
+        end
+    } 
+    --use{ --formatter
+        --'mhartington/formatter.nvim',
         --config = function()
-            --require 'languages.config.nvim-compe'
+            --require'languages.config.formatter'
         --end
-    --} 
+        --}
     --------------------------------
     ----------style layer-----------
     use{
         'projekt0n/github-nvim-theme',
+        --config = function()
+            --require'github-theme'.setup()
+        --end
+        }
+    use{
+        'sainnhe/gruvbox-material',
         config = function()
-            require'github-theme'.setup()
+          vim.g.gruvbox_material_background = 'medium'
+          vim.g.gruvbox_material_palette = 'mix'
+          vim.cmd(colorscheme gruvbox-material)
         end
         }
     --------------------------------
@@ -153,25 +167,26 @@ function(use)
             require 'plugins.config.indent-blankline'
         end
     } 
-    --use{ --
-        --'lewis6991/gitsigns.nvim',
-	--requires = 'nvim-lua/plenary.nvim',
-        --config = function()
-            --require 'plugins.config.gitsigns'
-        --end
-    --} 
-    --use{ --
-        --'itchyny/vim-cursorword',
-        --config = function()
-            --require 'plugins.config.'
-        --end
-    --} 
-    --use{ --
-        --'phaazon/hop.nvim',
+    use{ --
+        'lewis6991/gitsigns.nvim',
+	requires = 'nvim-lua/plenary.nvim',
+        config = function()
+            require 'gitsigns'.setup()
+        end
+    } 
+    use{ --highlight underline with your cursorword
+        'itchyny/vim-cursorword',
         --config = function()
             --require 'plugins.config.'
         --end
-    --} 
+    } 
+    use{ --EasyMotion-like plugin allowing you to jump anywhere
+        'phaazon/hop.nvim',
+        as = 'hop',
+        config = function()
+            require 'plugins.config.hop'
+        end
+    } 
     --------------------------------
 end
 )
