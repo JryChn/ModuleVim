@@ -2,8 +2,7 @@
 local gl = require("galaxyline")
 local gls = gl.section
 
-gl.short_line_list = {" "} -- keeping this table { } as empty will show inactive statuslines
-gl.short_line_list = {"NvimTree","Vista"}
+gl.short_line_list = {"NvimTree","Vista","toggleterm"}
 
 local colors = {
     bg = "#1e222a",
