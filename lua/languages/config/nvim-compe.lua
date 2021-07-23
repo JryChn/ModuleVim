@@ -17,14 +17,14 @@ require "compe".setup {
         path = {kind="﬜",priority=10,true},
         buffer = {kind = "﬘",priority=5, true},
         calc = {kind="",priority=10,true},
-        vsnip = {kind = "",priority=7}, --replace to what sign you prefer
-        nvim_lsp = {kind="",priority=10,true},
+        vsnip = {kind = "",priority=9}, --replace to what sign you prefer
+        nvim_lsp = {kind="",priority=9,true},
         spell = {kind="",priority=4,true},
-        tags = {kind="",priority=9,true},
+        tags = {kind="",priority=10,true},
         snippets_nvim = {kind="",priority=7,true},
         treesitter = {kind="",priority=8,true},
-        nvim_lua = {kind="",priority=10,true},
-        tabnine = {priority=6,true},
+        nvim_lua = {kind="",priority=9,true},
+        tabnine = {priority=9,true},
         emoji = {kind="",priority=9, true}
     }
 }
