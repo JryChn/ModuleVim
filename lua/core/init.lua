@@ -121,7 +121,7 @@ function(use)
 		{'glepnir/lspsaga.nvim',after = 'nvim-lspconfig'}
 		},
         config = function()
-            --require 'languages.config.nvim-lspconfig'
+            require 'languages.config.nvim-lspconfig'
         end
     } 
     use{ --auto completion
