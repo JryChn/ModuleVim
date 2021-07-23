@@ -10,7 +10,7 @@ packer.reset()
 packer.startup(
 function(use)
     use 'wbthomason/packer.nvim'
-    -----------core layer-----------
+    -----------NOTE:core layer-----------
     use{ --Icon sets for neovim plugins and settings
         'yamatsum/nvim-nonicons',
         requires = {'kyazdani42/nvim-web-devicons'}
@@ -113,17 +113,17 @@ function(use)
     }
     
     --------------------------------
-    ---------language layer---------
-    --use{ --language service protocol client
-        --'neovim/nvim-lspconfig',
-	--requires = {
-		--{'kabouzeid/nvim-lspinstall',after = 'nvim-lspconfig'},
-		--{'glepnir/lspsaga.nvim',after = 'nvim-lspconfig'}
-		--},
-        --config = function()
+    ---------NOTE:language layer---------
+    use{ --language service protocol client
+        'neovim/nvim-lspconfig',
+	requires = {
+		{'kabouzeid/nvim-lspinstall',after = 'nvim-lspconfig'},
+		{'glepnir/lspsaga.nvim',after = 'nvim-lspconfig'}
+		},
+        config = function()
             --require 'languages.config.nvim-lspconfig'
-        --end
-    --} 
+        end
+    } 
     use{ --auto completion
         'hrsh7th/nvim-compe',
 	requires = {
@@ -135,14 +135,20 @@ function(use)
             require 'languages.config.nvim-compe'
         end
     } 
-    --use{ --formatter
+    use{ --highlight and search for todo comments
+        "b3nj5m1n/kommentary",
+        config = function()
+            require 'languages.config.kommentary'
+        end
+    } 
+    --use{ --formatter TODO: Not use now, instead by lsp
         --'mhartington/formatter.nvim',
         --config = function()
             --require'languages.config.formatter'
         --end
         --}
     --------------------------------
-    ----------style layer-----------
+    ----------NOTE:style layer-----------
     use{
         'projekt0n/github-nvim-theme',
         --config = function()
@@ -158,9 +164,9 @@ function(use)
         end
         }
     --------------------------------
-    ----------tools layer-----------
+    ----------NOTE:tools layer-----------
     --------------------------------
-    ----------plugins layer---------
+    ----------NOTE:plugins layer---------
     use{ --
         'lukas-reineke/indent-blankline.nvim',
         config = function()
@@ -185,6 +191,13 @@ function(use)
         as = 'hop',
         config = function()
             require 'plugins.config.hop'
+        end
+    } 
+    use{ --highlight and search for todo comments
+        "folke/todo-comments.nvim",
+        requires = "nvim-lua/plenary.nvim",
+        config = function()
+            require 'plugins.config.todo-comments'
         end
     } 
     --------------------------------
