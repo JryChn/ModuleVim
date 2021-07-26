@@ -44,7 +44,13 @@ function(use)
         require 'core.config.vim-sayonara'
         end
     }
-    --use{ --a surround text object plugin
+    use{ --provide a directory root
+        'airblade/vim-rooter',
+        config = function()
+            vim.g.rooter_silent_chdir = 1
+        end
+    }
+    --use{ --a surround text object plugin TODO: open this plugin later
         --'blackcauldron7/surround.nvim',
         --config = function()
         --require'surround'.setup()
@@ -104,7 +110,6 @@ function(use)
 		{'nvim-treesitter/nvim-treesitter-textobjects',after = 'nvim-treesitter'},
 		{'p00f/nvim-ts-rainbow',after = 'nvim-treesitter'},
 		{'lewis6991/spellsitter.nvim',after = 'nvim-treesitter'},
-		{'folke/lsp-colors.nvim',after = 'nvim-treesitter'},
 		{'windwp/nvim-ts-autotag',after = 'nvim-treesitter'}
         },
         config = function()
@@ -118,7 +123,9 @@ function(use)
         'neovim/nvim-lspconfig',
 	requires = {
 		{'kabouzeid/nvim-lspinstall',after = 'nvim-lspconfig'},
-		{'glepnir/lspsaga.nvim',after = 'nvim-lspconfig'}
+		{'glepnir/lspsaga.nvim',after = 'nvim-lspconfig'},
+                -- TODO: Not need this plugin
+		-- {'folke/lsp-colors.nvim',after = 'nvim-lspconfig'},
 		},
         config = function()
             require 'languages.config.nvim-lspconfig'
@@ -163,21 +170,30 @@ function(use)
           vim.cmd("colorscheme gruvbox-material")
         end
         }
+    use{
+        'sainnhe/everforest',
+        requires = {
+            "sainnhe/sonokai",
+            "Th3Whit3Wolf/space-nvim"
+
+            }
+        }
     --------------------------------
     ----------NOTE:tools layer-----------
     --------------------------------
     ----------NOTE:plugins layer---------
-    use{ --
+    use{ --add line indent 
         'lukas-reineke/indent-blankline.nvim',
         config = function()
             require 'plugins.config.indent-blankline'
         end
     } 
-    use{ --
+    use{ --git plugin
         'lewis6991/gitsigns.nvim',
-	requires = 'nvim-lua/plenary.nvim',
+	requires = {'nvim-lua/plenary.nvim',
+            },
         config = function()
-            require 'gitsigns'.setup()
+            require 'plugins.config.gitsigns'
         end
     } 
     use{ --highlight underline with your cursorword
@@ -200,6 +216,14 @@ function(use)
             require 'plugins.config.todo-comments'
         end
     } 
+    --[[ use{ -- add zen mode  TODO: add it later
+    "folke/zen-mode.nvim",
+    cmd = "ZenMode",
+    event = "BufRead",
+    config = function ()
+        require 'plugins.config.zen-mode'
+    end
+        } ]]
     --------------------------------
 end
 )
