@@ -47,6 +47,8 @@ end
 _G.tab_complete = function()
     if vim.fn.pumvisible() == 1 then
         return t "<C-n>"
+    elseif vim.fn['vsnip#available'](1) == 1 then
+        return t "<Plug>(vsnip-expand-or-jump)"
     elseif check_back_space() then
         return t "<Tab>"
     else
@@ -63,12 +65,25 @@ _G.s_tab_complete = function()
     end
 end
 
+_G.jump_next = function()
+    if vim.fn['vsnip#available'](1) == 1 then
+        return t "<Plug>(vsnip-expand-or-jump)"
+    end
+end
+
+_G.jump_prev = function()
+    if vim.fn.call("vsnip#jumpable", {-1}) == 1 then
+        return t "<Plug>(vsnip-jump-prev)"
+    end
+end
 --  mappings
 
 vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("i", "<C-k>", "v:lua.jump_next()", {expr = true})
+vim.api.nvim_set_keymap("i", "<C-j>", "v:lua.jump_prev()", {expr = true})
 
 function _G.completions()
     local npairs = require("nvim-autopairs")
