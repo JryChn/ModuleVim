@@ -42,7 +42,8 @@ function(use)
         'mhinz/vim-sayonara',
         config = function()
         require 'core.config.vim-sayonara'
-        end
+        end,
+         event = "BufWinEnter"
     }
     use{ --provide a directory root
         'airblade/vim-rooter',
@@ -61,20 +62,23 @@ function(use)
         requires = {{'nvim-lua/popup.nvim'},{'nvim-lua/plenary.nvim'}},
         config = function()
             require 'core.config.telescope'
-        end
+        end,
+        event = "BufWinEnter"
     }
     use{ --a minimalist dashboard for neovim
        'glepnir/dashboard-nvim',
         config = function()
             require 'core.config.dashboard-vim'
-        end
+        end,
+        event = "BufWinEnter"
     }
     use{ --tabline plugin
         'romgrk/barbar.nvim',
         requires = {'kyazdani42/nvim-web-devicons'},
         config = function()
             require 'core.config.barbar'
-        end
+        end,
+        event = "BufWinEnter"
     }
     use{ --light-weight and super fast stataus line plugin
         'glepnir/galaxyline.nvim',
@@ -82,26 +86,30 @@ function(use)
         requires = {'kyazdani42/nvim-web-devicons'},
         config = function()
             require 'core.config.galaxyline'
-        end
+        end,
+        event = "BufWinEnter"
     }
     use{ --view and search LSP symbols
         'liuchengxu/vista.vim',
         config = function()
             require 'core.config.vista'
-        end
+        end,
+        event = "BufWinEnter"
     }
     use{ --file explorer
         'kyazdani42/nvim-tree.lua',
         requires = {'kyazdani42/nvim-web-devicons'},
         config = function()
             require 'core.config.nvim-tree'
-        end
+        end,
+        event = "BufWinEnter"
     }
     use{ --terminal intergration
         'akinsho/nvim-toggleterm.lua',
         config = function()
             require 'core.config.nvim-toggleterm'
-        end
+        end,
+        event = "BufWinEnter"
     } 
     use{ --NVIM Treesitter configurations and abstraction layer
         'nvim-treesitter/nvim-treesitter',
@@ -133,10 +141,12 @@ function(use)
     } 
     use{ --auto completion
         'hrsh7th/nvim-compe',
+        wants = "vim-vsnip",
+        event = "InsertCharPre",
 	requires = {
-		{'hrsh7th/vim-vsnip',requires = { 'rafamadriz/friendly-snippets'}},
-		{'hrsh7th/vim-vsnip-integ',after = 'vim-vsnip'},
-		{'tzachar/compe-tabnine',run = "./install.sh"}
+		{'hrsh7th/vim-vsnip',requires = { 'rafamadriz/friendly-snippets'},wants = "friendly-snippets",event = "InsertCharPre"},
+		{'hrsh7th/vim-vsnip-integ',after = 'vim-vsnip',event = "InsertCharPre"},
+		{'tzachar/compe-tabnine',run = "./install.sh",event = "InsertCharPre"}
 		},
         config = function()
             require 'languages.config.nvim-compe'
@@ -161,6 +171,7 @@ function(use)
         --config = function()
             --require'github-theme'.setup()
         --end
+        event = "BufRead"
         }
     use{
         'sainnhe/gruvbox-material',
@@ -169,15 +180,21 @@ function(use)
           vim.g.gruvbox_material_background = 'medium'
           vim.g.gruvbox_material_palette = 'mix'
           vim.cmd("colorscheme gruvbox-material")
-        end
+          vim.cmd("hi LspDiagnosticsVirtualTextWarning guifg='yellow'")
+          vim.cmd("hi LspDiagnosticsVirtualTextError guifg='#db4b4b'")
+          vim.cmd("hi LspDiagnosticsVirtualTextInformation guifg='#0db9d7'")
+          vim.cmd("hi LspDiagnosticsVirtualTextHint guifg='#10B981'")
+        end,
+        event = "BufRead"
+
         }
     use{
         'sainnhe/everforest',
         requires = {
             "sainnhe/sonokai",
             "Th3Whit3Wolf/space-nvim"
-
-            }
+            },
+            event = "BufRead"
         }
     --------------------------------
     ----------NOTE:tools layer-----------
@@ -195,7 +212,8 @@ function(use)
             },
         config = function()
             require 'plugins.config.gitsigns'
-        end
+        end,
+        event = "BufRead"
     } 
     use{ --highlight underline with your cursorword
         'itchyny/vim-cursorword',
@@ -208,14 +226,16 @@ function(use)
         as = 'hop',
         config = function()
             require 'plugins.config.hop'
-        end
+        end,
+        event = "BufRead"
     } 
     use{ --highlight and search for todo comments
         "folke/todo-comments.nvim",
         requires = "nvim-lua/plenary.nvim",
         config = function()
             require 'plugins.config.todo-comments'
-        end
+        end,
+        event = "BufRead"
     } 
     --[[ use{ -- add zen mode  TODO: add it later
     "folke/zen-mode.nvim",
@@ -225,6 +245,10 @@ function(use)
         require 'plugins.config.zen-mode'
     end
         } ]]
+    use{ --markdown preview plugins
+    "davidgranstrom/nvim-markdown-preview",
+    event = "BufRead"
+        }
     --------------------------------
 end
 )
