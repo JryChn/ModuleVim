@@ -110,7 +110,7 @@ function(use)
             require 'core.config.nvim-toggleterm'
         end,
         event = "BufWinEnter"
-    } 
+    }
     use{ --NVIM Treesitter configurations and abstraction layer
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate',
@@ -124,7 +124,7 @@ function(use)
             require 'core.config.nvim-treesitter'
         end
     }
-    
+
     --------------------------------
     ---------NOTE:language layer---------
     use{ --language service protocol client
@@ -138,7 +138,7 @@ function(use)
         config = function()
             require 'languages.config.nvim-lspconfig'
         end
-    } 
+    }
     use{ --auto completion
         'hrsh7th/nvim-compe',
         wants = "vim-vsnip",
@@ -151,13 +151,13 @@ function(use)
         config = function()
             require 'languages.config.nvim-compe'
         end
-    } 
+    }
     use{ --highlight and search for todo comments
         "b3nj5m1n/kommentary",
         config = function()
             require 'languages.config.kommentary'
         end
-    } 
+    }
     --use{ --formatter TODO: Not use now, instead by lsp
         --'mhartington/formatter.nvim',
         --config = function()
@@ -200,12 +200,12 @@ function(use)
     ----------NOTE:tools layer-----------
     --------------------------------
     ----------NOTE:plugins layer---------
-    use{ --add line indent 
+    use{ --add line indent
         'lukas-reineke/indent-blankline.nvim',
         config = function()
             require 'plugins.config.indent-blankline'
         end
-    } 
+    }
     use{ --git plugin
         'lewis6991/gitsigns.nvim',
 	requires = {'nvim-lua/plenary.nvim',
@@ -214,13 +214,13 @@ function(use)
             require 'plugins.config.gitsigns'
         end,
         event = "BufRead"
-    } 
+    }
     use{ --highlight underline with your cursorword
         'itchyny/vim-cursorword',
         --config = function()
             --require 'plugins.config.'
         --end
-    } 
+    }
     use{ --EasyMotion-like plugin allowing you to jump anywhere
         'phaazon/hop.nvim',
         as = 'hop',
@@ -228,7 +228,7 @@ function(use)
             require 'plugins.config.hop'
         end,
         event = "BufRead"
-    } 
+    }
     use{ --highlight and search for todo comments
         "folke/todo-comments.nvim",
         requires = "nvim-lua/plenary.nvim",
@@ -236,7 +236,7 @@ function(use)
             require 'plugins.config.todo-comments'
         end,
         event = "BufRead"
-    } 
+    }
     --[[ use{ -- add zen mode  TODO: add it later
     "folke/zen-mode.nvim",
     cmd = "ZenMode",
