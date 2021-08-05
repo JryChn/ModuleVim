@@ -152,9 +152,6 @@ packer.startup(function(use)
 		requires = {
 			{'kabouzeid/nvim-lspinstall', after = 'nvim-lspconfig'},
 			{'glepnir/lspsaga.nvim', after = 'nvim-lspconfig'},
-
-			-- TODO: Not need this plugin
-			-- {'folke/lsp-colors.nvim',after = 'nvim-lspconfig'},
 		},
 		config = function()
 			require 'languages.config.nvim-lspconfig'
@@ -235,6 +232,18 @@ packer.startup(function(use)
 	----------NOTE:tools layer-----------
 	--------------------------------
 	----------NOTE:plugins layer---------
+	use {
+		-- displays a popup with possible key bindings of the command you started typing
+		"folke/which-key.nvim",
+		config = function()
+			require("which-key").setup {
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			}
+		end
+	}
+
 	use {
 		--add line indent
 		'lukas-reineke/indent-blankline.nvim',
