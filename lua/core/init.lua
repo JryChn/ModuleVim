@@ -58,6 +58,15 @@ packer.startup(function(use)
 			vim.g.rooter_silent_chdir = 1
 		end
 	}
+	use {
+		--provide a single command that deletes the current buffer
+		'norcalli/nvim-colorizer.lua',
+		config = function()
+			require 'colorizer'.setup()
+		end,
+
+		-- event = "BufWinEnter"
+	}
 
 	--use{ --a surround text object plugin TODO: open this plugin later
 	--'blackcauldron7/surround.nvim',

@@ -25,8 +25,9 @@ global_local = {
 	encoding = "utf-8",
 	viewoptions = "folds,cursor,curdir,slash,unix",
 	sessionoptions = "curdir,help,tabpages,winsize",
+
 	-- clipboard = "unnamedplus",
-    -- HINT: neovim not support system clipboard
+	-- HINT: neovim not support system clipboard
 	wildignorecase = true,
 	wildignore = ".git,.hg,.svn,*.pyc,*.o,*.out,*.jpg,*.jpeg,*.png,*.gif,*.zip,**/tmp/**,*.DS_Store,**/node_modules/**,**/bower_modules/**",
 	backup = false,
@@ -87,6 +88,11 @@ global_local = {
 	winblend = 10,
 	spell = true,
 	spelllang = "en_us,cjk",
+
+	-- optimize startup time
+	shell = "/bin/bash",
+	shadafile = "",
+	lazyredraw = true
 }
 buffer = {
 	autoread = true,
