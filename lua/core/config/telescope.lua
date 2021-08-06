@@ -41,31 +41,33 @@ vim.api.nvim_set_keymap(
 	"<cmd>lua require\'telescope.builtin\'.registers()<CR>>",
 	{silent = true}
 )
-	vim.api.nvim_set_keymap('n', 'gr', '<cmd>Telescope lsp_references<CR>', {
-		noremap = true,
-		silent = true
-	})
-	vim.api.nvim_set_keymap('n', 'gI', '<cmd>Telescope lsp_implementations<CR>', {
-		noremap = true,
-		silent = true
-	})
-	vim.api.nvim_set_keymap('n', '<space>gc', '<cmd>Telescope git_bcommits<CR>', {
-		noremap = true,
-		silent = true
-	})
-	vim.api.nvim_set_keymap('n', '<space>gC', '<cmd>Telescope git_commits<CR>', {
-		noremap = true,
-		silent = true
-	})
-	vim.api.nvim_set_keymap('n', '<space>gB', '<cmd>Telescope git_branches<CR>', {
-		noremap = true,
-		silent = true
-	})
-	vim.api.nvim_set_keymap('n', '<space>gS', '<cmd>Telescope git_status<CR>', {
-		noremap = true,
-		silent = true
-	})
-	vim.api.nvim_set_keymap('n', '<space>lq', '<cmd>Telescope quickfix<CR>', {
-		noremap = true,
-		silent = true
-	})
+vim.api.nvim_set_keymap(
+	'n',
+	'gr',
+	'<cmd>Telescope lsp_references<CR>',
+	{noremap = true, silent = true}
+)
+vim.api.nvim_set_keymap('n', 'gI', '<cmd>Telescope lsp_implementations<CR>', {
+	noremap = true,
+	silent = true
+})
+vim.api.nvim_set_keymap('n', '<space>gc', '<cmd>Telescope git_bcommits<CR>', {
+	noremap = true,
+	silent = true
+})
+vim.api.nvim_set_keymap('n', '<space>gC', '<cmd>Telescope git_commits<CR>', {
+	noremap = true,
+	silent = true
+})
+vim.api.nvim_set_keymap('n', '<space>gB', '<cmd>Telescope git_branches<CR>', {
+	noremap = true,
+	silent = true
+})
+vim.api.nvim_set_keymap('n', '<space>gS', '<cmd>Telescope git_status<CR>', {
+	noremap = true,
+	silent = true
+})
+vim.api.nvim_set_keymap('n', '<space>lq', '<cmd>Telescope quickfix<CR>', {
+	noremap = true,
+	silent = true
+})

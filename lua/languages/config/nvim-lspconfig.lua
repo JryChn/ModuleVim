@@ -106,10 +106,12 @@ local on_attach = function(client, bufnr)
 		'<C-U>lua require(\'lspsaga.codeaction\').range_code_action()<CR>',
 		{noremap = true, silent = true}
 	)
-	buf_set_keymap('n', 'gr', '<cmd>Telescope lsp_references<CR>', {
-		noremap = true,
-		silent = true
-	})
+	buf_set_keymap(
+		'n',
+		'gr',
+		'<cmd>Telescope lsp_references<CR>',
+		{noremap = true, silent = true}
+	)
 	buf_set_keymap('n', 'gI', '<cmd>Telescope lsp_implementations<CR>', {
 		noremap = true,
 		silent = true

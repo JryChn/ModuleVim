@@ -202,10 +202,14 @@ packer.startup(function(use)
 	----------NOTE:style layer-----------
 	use {
 		'projekt0n/github-nvim-theme',
-
-		--config = function()
-		--require'github-theme'.setup()
-		--end
+		config = function()
+			vim.api.nvim_set_keymap(
+				'n',
+				'<space>tc1',
+				"<cmd>lua require'github-theme'.setup()<cr>",
+				{silent = true}
+			)
+		end,
 		event = "BufRead"
 	}
 	use {
@@ -219,17 +223,31 @@ packer.startup(function(use)
 			vim.cmd("hi LspDiagnosticsVirtualTextError guifg='#db4b4b'")
 			vim.cmd("hi LspDiagnosticsVirtualTextInformation guifg='#0db9d7'")
 			vim.cmd("hi LspDiagnosticsVirtualTextHint guifg='#10B981'")
-            vim.api.nvim_command('highlight default HopNextKey  guifg=#ff007c gui=bold ctermfg=198 cterm=bold')
+			vim.api.nvim_command('highlight default HopNextKey  guifg=#ff007c gui=bold ctermfg=198 cterm=bold')
 
-            vim.api.nvim_command('highlight default HopNextKey1 guifg=#00dfff gui=bold ctermfg=45 cterm=bold')
-           vim.api.nvim_command('highlight default HopNextKey2 guifg=#2b8db3 ctermfg=33')
-           vim.api.nvim_command('highlight default HopUnmatched guifg=#666666 ctermfg=242')
+			vim.api.nvim_command('highlight default HopNextKey1 guifg=#00dfff gui=bold ctermfg=45 cterm=bold')
+			vim.api.nvim_command('highlight default HopNextKey2 guifg=#2b8db3 ctermfg=33')
+			vim.api.nvim_command('highlight default HopUnmatched guifg=#666666 ctermfg=242')
+			vim.api.nvim_set_keymap(
+				'n',
+				'<space>tc2',
+				"<cmd>colorscheme gruvbox-material<cr>",
+				{silent = true}
+			)
 		end,
 		event = "BufRead"
 	}
 	use {
 		'sainnhe/everforest',
 		requires = {"sainnhe/sonokai", "Th3Whit3Wolf/space-nvim"},
+		config = function()
+			vim.api.nvim_set_keymap(
+				'n',
+				'<space>tc3',
+				"<cmd>colorscheme everforest<cr>",
+				{silent = true}
+			)
+		end,
 		event = "BufRead"
 	}
 
@@ -242,6 +260,13 @@ packer.startup(function(use)
 		"folke/which-key.nvim",
 		config = function()
 			require 'plugins.config.which-key'
+		end
+	}
+	use {
+		--transparent function
+		'xiyaowong/nvim-transparent',
+		config = function()
+			require 'plugins.config.nvim-transparent'
 		end
 	}
 

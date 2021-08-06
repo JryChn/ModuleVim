@@ -122,6 +122,7 @@ wk.register({
 	["<space>f"] = {name = "+Find"},
 	["<space>g"] = {name = "+Git"},
 	["<space>s"] = {name = "+Search"},
+	["<space>t"] = {name = "style"},
 	["<space>j"] = {name = "jump"},
 	["<space>l"] = {name = "+Language"},
 	["<space>w"] = {name = "+Workspace"},
@@ -156,6 +157,14 @@ wk.register({
 
 	----------------------------------
 	["<space>sb"] = {name = "search in buffer"},
+
+	----------------------------------
+	["<space>ti"] = {name = "toggle indent line"},
+	["<space>tp"] = {name = "toggle transparent"},
+	["<space>tc"] = {name = "change theme"},
+	["<space>tc1"] = {name = "change to github style"},
+	["<space>tc2"] = {name = "change to gruvbox-material"},
+	["<space>tc3"] = {name = "change to everforest"},
 
 	----------------------------------
 	["<space>jw"] = {name = "jump to word"},
