@@ -140,7 +140,7 @@ wk.register({
 	["<space>fg"] = {name = "live grep"},
 	["<space>fb"] = {name = "find buffers"},
 	["<space>fh"] = {name = "help tags"},
-	["<space>fs"] = {name = "grep string"},
+	["<space>fs"] = {name = "search cursor string"},
 
 	----------------------------------
 	["<space>gb"] = {name = "Git Blame"},
@@ -149,6 +149,10 @@ wk.register({
 	["<space>gp"] = {name = "Git preview hunk"},
 	["<space>gs"] = {name = "Git stage"},
 	["<space>gu"] = {name = "Git unstage"},
+	["<space>gc"] = {name = "Git buffer commits"},
+	["<space>gC"] = {name = "Git commits"},
+	["<space>gB"] = {name = "Git branchs"},
+	["<space>gS"] = {name = "Git status"},
 
 	----------------------------------
 	["<space>sb"] = {name = "search in buffer"},
@@ -167,10 +171,12 @@ wk.register({
 	["<space>ld"] = {name = "preview Definition"},
 	["<space>lr"] = {name = "rename"},
 	["<space>ll"] = {name = "toggle diagnostic"},
+	["<space>lq"] = {name = "quickfix"},
 
 	----------------------------------
 	["gd"] = {name = "go to Definition"},
 	["gD"] = {name = "go to Declaration"},
 	["gr"] = {name = "go to Reference"},
 	["gh"] = {name = "show information"},
+	["gI"] = {name = "go to implementation"},
 })
