@@ -1,3 +1,4 @@
+--HINT: these keymap has already transformed to which-key
 vim.api.nvim_set_keymap(
 	"n",
 	"<space>ff",
@@ -30,14 +31,13 @@ vim.api.nvim_set_keymap(
 )
 vim.api.nvim_set_keymap(
 	"n",
-	"<c-V>",
-	"<cmd>lua require\'telescope.builtin\'.registers()<CR>>",
-	{silent = true}
-)
-vim.api.nvim_set_keymap(
-	"n",
 	"<space>sb",
 	"<cmd>lua require\'telescope.builtin\'.current_buffer_fuzzy_find()<CR>>",
 	{silent = true}
 )
-
+vim.api.nvim_set_keymap(
+	"i",
+	"<c-V>",
+	"<cmd>lua require\'telescope.builtin\'.registers()<CR>>",
+	{silent = true}
+)

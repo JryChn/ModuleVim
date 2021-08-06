@@ -215,9 +215,8 @@ local no_errors, error_msg = pcall(function()
 			path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/nvim-lspinstall"
 		},
 		["nvim-markdown-preview"] = {
-			loaded = false,
-			needs_bufread = true,
-			path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/nvim-markdown-preview"
+			loaded = true,
+			path = "/home/jeremy/.local/share/nvim/site/pack/packer/start/nvim-markdown-preview"
 		},
 		["nvim-nonicons"] = {
 			loaded = true,
@@ -313,6 +312,10 @@ local no_errors, error_msg = pcall(function()
 			needs_bufread = false,
 			path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/todo-comments.nvim"
 		},
+		["vim-bookmarks"] = {
+			loaded = true,
+			path = "/home/jeremy/.local/share/nvim/site/pack/packer/start/vim-bookmarks"
+		},
 		["vim-cursorword"] = {
 			loaded = true,
 			path = "/home/jeremy/.local/share/nvim/site/pack/packer/start/vim-cursorword"
@@ -358,7 +361,7 @@ local no_errors, error_msg = pcall(function()
 		},
 		["which-key.nvim"] = {
 			config = {
-				"\27LJ\2\2;\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\14which-key\frequire\0"
+				"\27LJ\2\0028\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\29plugins.config.which-key\frequire\0"
 			},
 			loaded = true,
 			path = "/home/jeremy/.local/share/nvim/site/pack/packer/start/which-key.nvim"
@@ -384,7 +387,7 @@ local no_errors, error_msg = pcall(function()
 	-- Config for: which-key.nvim
 	time([[Config for which-key.nvim]], true)
 	try_loadstring(
-		"\27LJ\2\2;\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\14which-key\frequire\0",
+		"\27LJ\2\0028\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\29plugins.config.which-key\frequire\0",
 		"config",
 		"which-key.nvim"
 	)
@@ -426,14 +429,14 @@ local no_errors, error_msg = pcall(function()
 	)
 	time([[Config for kommentary]], false)
 
-	-- Config for: nvim-lspconfig
-	time([[Config for nvim-lspconfig]], true)
+	-- Config for: neoscroll.nvim
+	time([[Config for neoscroll.nvim]], true)
 	try_loadstring(
-		"\27LJ\2\2?\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0$languages.config.nvim-lspconfig\frequire\0",
+		"\27LJ\2\0027\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14neoscroll\frequire\0",
 		"config",
-		"nvim-lspconfig"
+		"neoscroll.nvim"
 	)
-	time([[Config for nvim-lspconfig]], false)
+	time([[Config for neoscroll.nvim]], false)
 
 	-- Config for: nvim-autopairs
 	time([[Config for nvim-autopairs]], true)
@@ -444,14 +447,14 @@ local no_errors, error_msg = pcall(function()
 	)
 	time([[Config for nvim-autopairs]], false)
 
-	-- Config for: neoscroll.nvim
-	time([[Config for neoscroll.nvim]], true)
+	-- Config for: nvim-lspconfig
+	time([[Config for nvim-lspconfig]], true)
 	try_loadstring(
-		"\27LJ\2\0027\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14neoscroll\frequire\0",
+		"\27LJ\2\2?\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0$languages.config.nvim-lspconfig\frequire\0",
 		"config",
-		"neoscroll.nvim"
+		"nvim-lspconfig"
 	)
-	time([[Config for neoscroll.nvim]], false)
+	time([[Config for nvim-lspconfig]], false)
 
 	-- Load plugins in order defined by `after`
 	time([[Sequenced loading]], true)
@@ -467,9 +470,9 @@ local no_errors, error_msg = pcall(function()
 
 	-- Event lazy-loads
 	time([[Defining lazy-load event autocommands]], true)
-	vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'galaxyline.nvim', 'dashboard-nvim', 'vista.vim', 'barbar.nvim', 'nvim-tree.lua', 'vim-sayonara', 'nvim-toggleterm.lua', 'telescope.nvim'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
+	vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'galaxyline.nvim', 'dashboard-nvim', 'barbar.nvim', 'nvim-tree.lua', 'vista.vim', 'vim-sayonara', 'nvim-toggleterm.lua', 'telescope.nvim'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
 	vim.cmd [[au InsertCharPre * ++once lua require("packer.load")({'nvim-compe', 'compe-tabnine', 'vim-vsnip', 'vim-vsnip-integ'}, { event = "InsertCharPre *" }, _G.packer_plugins)]]
-	vim.cmd [[au BufRead * ++once lua require("packer.load")({'hop', 'gitsigns.nvim', 'nvim-markdown-preview', 'everforest', 'todo-comments.nvim', 'github-nvim-theme', 'gruvbox-material'}, { event = "BufRead *" }, _G.packer_plugins)]]
+	vim.cmd [[au BufRead * ++once lua require("packer.load")({'hop', 'gitsigns.nvim', 'everforest', 'todo-comments.nvim', 'github-nvim-theme', 'gruvbox-material'}, { event = "BufRead *" }, _G.packer_plugins)]]
 	time([[Defining lazy-load event autocommands]], false)
 	vim.cmd("augroup END")
 	if should_profile then

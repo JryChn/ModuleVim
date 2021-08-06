@@ -20,12 +20,10 @@ local on_attach = function(client, bufnr)
 		noremap = true,
 		silent = true
 	})
-	buf_set_keymap(
-		'n',
-		'gd',
-		'<Cmd>lua require\'lspsaga.provider\'.preview_definition()<CR>',
-		{noremap = true, silent = true}
-	)
+	buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', {
+		noremap = true,
+		silent = true
+	})
 	buf_set_keymap(
 		'n',
 		'K',
@@ -75,7 +73,7 @@ local on_attach = function(client, bufnr)
 	buf_set_keymap(
 		'n',
 		'<space>ld',
-		'<cmd>lua vim.lsp.buf.type_definition()<CR>',
+		'<Cmd>lua require\'lspsaga.provider\'.preview_definition()<CR>',
 		{noremap = true, silent = true}
 	)
 	buf_set_keymap(

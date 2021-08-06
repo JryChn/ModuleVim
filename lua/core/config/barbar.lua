@@ -12,6 +12,7 @@ vim.api.nvim_set_keymap("n", "\\9", ":BufferGoto 9<CR>", {silent = true})
 vim.api.nvim_set_keymap("n", "\\0", ":BufferLast<CR>", {silent = true})
 vim.api.nvim_set_keymap("n", "\\c", ":BufferClose<CR>", {silent = true})
 vim.api.nvim_set_keymap("n", "\\s", ":BufferPick<CR>", {silent = true})
+vim.api.nvim_set_keymap("n", "\\e", ":enew<CR>", {silent = true})
 vim.api.nvim_set_keymap(
 	"n",
 	"\\b",

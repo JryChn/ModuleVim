@@ -236,11 +236,7 @@ packer.startup(function(use)
 		-- displays a popup with possible key bindings of the command you started typing
 		"folke/which-key.nvim",
 		config = function()
-			require("which-key").setup {
-				-- your configuration comes here
-				-- or leave it empty to use the default settings
-				-- refer to the configuration section below
-			}
+			require 'plugins.config.which-key'
 		end
 	}
 
@@ -299,8 +295,12 @@ packer.startup(function(use)
         } ]]
 	use {
 		--markdown preview plugins
-		"davidgranstrom/nvim-markdown-preview",
-		event = "BufRead"
+		"davidgranstrom/nvim-markdown-preview"
+	}
+
+	use {
+		--BookMarks toggling
+		"MattesGroeger/vim-bookmarks"
 	}
 
 	--------------------------------
