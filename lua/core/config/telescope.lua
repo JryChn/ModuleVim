@@ -36,8 +36,8 @@ vim.api.nvim_set_keymap(
 	{silent = true}
 )
 vim.api.nvim_set_keymap(
-	"i",
-	"<c-V>",
+	"n",
+	"\\p",
 	"<cmd>lua require\'telescope.builtin\'.registers()<CR>>",
 	{silent = true}
 )

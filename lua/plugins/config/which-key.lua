@@ -127,6 +127,7 @@ wk.register({
 	["<space>l"] = {name = "+Language"},
 	["<space>w"] = {name = "+Workspace"},
 	["\\e"] = {name = "new buffer"},
+	["\\p"] = {name = "register paste"},
 
 	----------------------------------
 	["<space>aa"] = {name = "Welcome page"},

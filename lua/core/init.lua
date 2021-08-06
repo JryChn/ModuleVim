@@ -260,14 +260,16 @@ packer.startup(function(use)
 		"folke/which-key.nvim",
 		config = function()
 			require 'plugins.config.which-key'
-		end
+		end,
+		event = "BufWinEnter"
 	}
 	use {
 		--transparent function
 		'xiyaowong/nvim-transparent',
 		config = function()
 			require 'plugins.config.nvim-transparent'
-		end
+		end,
+		event = "BufWinEnter"
 	}
 
 	use {
@@ -275,7 +277,8 @@ packer.startup(function(use)
 		'lukas-reineke/indent-blankline.nvim',
 		config = function()
 			require 'plugins.config.indent-blankline'
-		end
+		end,
+		event = "BufWinEnter"
 	}
 	use {
 		--git plugin
