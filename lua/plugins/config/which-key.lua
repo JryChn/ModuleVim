@@ -166,7 +166,7 @@ wk.register({
 	["<space>la"] = {name = "action"},
 	["<space>ld"] = {name = "preview Definition"},
 	["<space>lr"] = {name = "rename"},
-	["<space>ll"] = {name = "toggle line diagnostic"},
+	["<space>ll"] = {name = "toggle diagnostic"},
 
 	----------------------------------
 	["gd"] = {name = "go to Definition"},
