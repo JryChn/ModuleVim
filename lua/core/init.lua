@@ -161,6 +161,7 @@ packer.startup(function(use)
 		requires = {
 			{'kabouzeid/nvim-lspinstall', after = 'nvim-lspconfig'},
 			{'glepnir/lspsaga.nvim', after = 'nvim-lspconfig'},
+			{'mfussenegger/nvim-jdtls', after = 'nvim-lspconfig'},
 		},
 		config = function()
 			require 'languages.config.nvim-lspconfig'
