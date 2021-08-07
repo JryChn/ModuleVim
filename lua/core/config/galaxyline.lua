@@ -1,7 +1,7 @@
 local gl = require("galaxyline")
 local gls = gl.section
 
-gl.short_line_list = {"NvimTree", "Vista", "toggleterm"}
+gl.short_line_list = {"NvimTree", "vista", "toggleterm"}
 
 local colors = {
 	bg = "#1e222a",

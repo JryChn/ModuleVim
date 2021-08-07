@@ -150,6 +150,7 @@ local lspservers = {
 	"bash",
 	"css",
 	"html",
+    "rome",
 	"json",
 	"python",
 	"rust",

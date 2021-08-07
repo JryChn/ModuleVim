@@ -44,8 +44,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/jeremy/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/home/jeremy/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/home/jeremy/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/home/jeremy/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/jeremy/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
+local package_path_str = "/home/jeremy/.cache/nvim/packer_hererocks/2.0.5/share/lua/5.1/?.lua;/home/jeremy/.cache/nvim/packer_hererocks/2.0.5/share/lua/5.1/?/init.lua;/home/jeremy/.cache/nvim/packer_hererocks/2.0.5/lib/luarocks/rocks-5.1/?.lua;/home/jeremy/.cache/nvim/packer_hererocks/2.0.5/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/jeremy/.cache/nvim/packer_hererocks/2.0.5/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -70,12 +70,12 @@ time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   ["accelerated-jk"] = {
-    config = { "\27LJ\2\2:\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\31core.config.accelerated-jk\frequire\0" },
+    config = { "\27LJ\1\2:\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\31core.config.accelerated-jk\frequire\0" },
     loaded = true,
     path = "/home/jeremy/.local/share/nvim/site/pack/packer/start/accelerated-jk"
   },
   ["barbar.nvim"] = {
-    config = { "\27LJ\2\0022\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\23core.config.barbar\frequire\0" },
+    config = { "\27LJ\1\0022\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\23core.config.barbar\frequire\0" },
     loaded = false,
     needs_bufread = false,
     path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/barbar.nvim"
@@ -87,18 +87,18 @@ _G.packer_plugins = {
     path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/compe-tabnine"
   },
   ["dashboard-nvim"] = {
-    config = { "\27LJ\2\0029\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\30core.config.dashboard-vim\frequire\0" },
+    config = { "\27LJ\1\0029\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\30core.config.dashboard-vim\frequire\0" },
     loaded = false,
     needs_bufread = false,
     path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/dashboard-nvim"
   },
   ["dial.nvim"] = {
-    config = { "\27LJ\2\2\v\0\0\1\0\0\0\1K\0\1\0\0" },
+    config = { "\27LJ\1\2\v\0\0\1\0\0\0\1G\0\1\0\0" },
     loaded = true,
     path = "/home/jeremy/.local/share/nvim/site/pack/packer/start/dial.nvim"
   },
   everforest = {
-    config = { "\27LJ\2\2{\0\0\5\0\a\0\t6\0\0\0009\0\1\0009\0\2\0'\1\3\0'\2\4\0'\3\5\0005\4\6\0B\0\5\1K\0\1\0\1\0\1\vsilent\2$<cmd>colorscheme everforest<cr>\15<space>tc3\6n\20nvim_set_keymap\bapi\bvim\0" },
+    config = { "\27LJ\1\2{\0\0\5\0\a\0\t4\0\0\0007\0\1\0007\0\2\0%\1\3\0%\2\4\0%\3\5\0003\4\6\0>\0\5\1G\0\1\0\1\0\1\vsilent\2$<cmd>colorscheme everforest<cr>\15<space>tc3\6n\20nvim_set_keymap\bapi\bvim\0" },
     loaded = false,
     needs_bufread = false,
     path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/everforest"
@@ -108,43 +108,43 @@ _G.packer_plugins = {
     path = "/home/jeremy/.local/share/nvim/site/pack/packer/start/friendly-snippets"
   },
   ["galaxyline.nvim"] = {
-    config = { "\27LJ\2\0026\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\27core.config.galaxyline\frequire\0" },
+    config = { "\27LJ\1\0026\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\27core.config.galaxyline\frequire\0" },
     loaded = false,
     needs_bufread = false,
     path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/galaxyline.nvim"
   },
   ["github-nvim-theme"] = {
-    config = { "\27LJ\2\2†\1\0\0\5\0\a\0\t6\0\0\0009\0\1\0009\0\2\0'\1\3\0'\2\4\0'\3\5\0005\4\6\0B\0\5\1K\0\1\0\1\0\1\vsilent\2/<cmd>lua require'github-theme'.setup()<cr>\15<space>tc1\6n\20nvim_set_keymap\bapi\bvim\0" },
+    config = { "\27LJ\1\2†\1\0\0\5\0\a\0\t4\0\0\0007\0\1\0007\0\2\0%\1\3\0%\2\4\0%\3\5\0003\4\6\0>\0\5\1G\0\1\0\1\0\1\vsilent\2/<cmd>lua require'github-theme'.setup()<cr>\15<space>tc1\6n\20nvim_set_keymap\bapi\bvim\0" },
     loaded = false,
     needs_bufread = false,
     path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/github-nvim-theme"
   },
   ["gitsigns.nvim"] = {
-    config = { "\27LJ\2\0027\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\28plugins.config.gitsigns\frequire\0" },
+    config = { "\27LJ\1\0027\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\28plugins.config.gitsigns\frequire\0" },
     loaded = false,
     needs_bufread = false,
     path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/gitsigns.nvim"
   },
   ["gruvbox-material"] = {
-    config = { "\27LJ\2\2†\a\0\0\5\0\23\00096\0\0\0009\0\1\0'\1\3\0=\1\2\0006\0\0\0009\0\1\0'\1\5\0=\1\4\0006\0\0\0009\0\6\0'\1\a\0B\0\2\0016\0\0\0009\0\6\0'\1\b\0B\0\2\0016\0\0\0009\0\6\0'\1\t\0B\0\2\0016\0\0\0009\0\6\0'\1\n\0B\0\2\0016\0\0\0009\0\6\0'\1\v\0B\0\2\0016\0\0\0009\0\f\0009\0\r\0'\1\14\0B\0\2\0016\0\0\0009\0\f\0009\0\r\0'\1\15\0B\0\2\0016\0\0\0009\0\f\0009\0\r\0'\1\16\0B\0\2\0016\0\0\0009\0\f\0009\0\r\0'\1\17\0B\0\2\0016\0\0\0009\0\f\0009\0\18\0'\1\19\0'\2\20\0'\3\21\0005\4\22\0B\0\5\1K\0\1\0\1\0\1\vsilent\2*<cmd>colorscheme gruvbox-material<cr>\15<space>tc2\6n\20nvim_set_keymap=highlight default HopUnmatched guifg=#666666 ctermfg=242;highlight default HopNextKey2 guifg=#2b8db3 ctermfg=33Ohighlight default HopNextKey1 guifg=#00dfff gui=bold ctermfg=45 cterm=boldPhighlight default HopNextKey  guifg=#ff007c gui=bold ctermfg=198 cterm=bold\17nvim_command\bapi5hi LspDiagnosticsVirtualTextHint guifg='#10B981'<hi LspDiagnosticsVirtualTextInformation guifg='#0db9d7'6hi LspDiagnosticsVirtualTextError guifg='#db4b4b'7hi LspDiagnosticsVirtualTextWarning guifg='yellow'!colorscheme gruvbox-material\bcmd\bmix\29gruvbox_material_palette\vmedium gruvbox_material_background\6g\bvim\0" },
+    config = { "\27LJ\1\2†\a\0\0\5\0\23\00094\0\0\0007\0\1\0%\1\3\0:\1\2\0004\0\0\0007\0\1\0%\1\5\0:\1\4\0004\0\0\0007\0\6\0%\1\a\0>\0\2\0014\0\0\0007\0\6\0%\1\b\0>\0\2\0014\0\0\0007\0\6\0%\1\t\0>\0\2\0014\0\0\0007\0\6\0%\1\n\0>\0\2\0014\0\0\0007\0\6\0%\1\v\0>\0\2\0014\0\0\0007\0\f\0007\0\r\0%\1\14\0>\0\2\0014\0\0\0007\0\f\0007\0\r\0%\1\15\0>\0\2\0014\0\0\0007\0\f\0007\0\r\0%\1\16\0>\0\2\0014\0\0\0007\0\f\0007\0\r\0%\1\17\0>\0\2\0014\0\0\0007\0\f\0007\0\18\0%\1\19\0%\2\20\0%\3\21\0003\4\22\0>\0\5\1G\0\1\0\1\0\1\vsilent\2*<cmd>colorscheme gruvbox-material<cr>\15<space>tc2\6n\20nvim_set_keymap=highlight default HopUnmatched guifg=#666666 ctermfg=242;highlight default HopNextKey2 guifg=#2b8db3 ctermfg=33Ohighlight default HopNextKey1 guifg=#00dfff gui=bold ctermfg=45 cterm=boldPhighlight default HopNextKey  guifg=#ff007c gui=bold ctermfg=198 cterm=bold\17nvim_command\bapi5hi LspDiagnosticsVirtualTextHint guifg='#10B981'<hi LspDiagnosticsVirtualTextInformation guifg='#0db9d7'6hi LspDiagnosticsVirtualTextError guifg='#db4b4b'7hi LspDiagnosticsVirtualTextWarning guifg='yellow'!colorscheme gruvbox-material\bcmd\bmix\29gruvbox_material_palette\vmedium gruvbox_material_background\6g\bvim\0" },
     loaded = false,
     needs_bufread = false,
     path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/gruvbox-material"
   },
   hop = {
-    config = { "\27LJ\2\0022\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\23plugins.config.hop\frequire\0" },
+    config = { "\27LJ\1\0022\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\23plugins.config.hop\frequire\0" },
     loaded = false,
     needs_bufread = false,
     path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/hop"
   },
   ["indent-blankline.nvim"] = {
-    config = { "\27LJ\2\2?\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0$plugins.config.indent-blankline\frequire\0" },
+    config = { "\27LJ\1\2?\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0$plugins.config.indent-blankline\frequire\0" },
     loaded = false,
     needs_bufread = false,
     path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/indent-blankline.nvim"
   },
   kommentary = {
-    config = { "\27LJ\2\2;\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0 languages.config.kommentary\frequire\0" },
+    config = { "\27LJ\1\2;\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0 languages.config.kommentary\frequire\0" },
     loaded = true,
     path = "/home/jeremy/.local/share/nvim/site/pack/packer/start/kommentary"
   },
@@ -155,23 +155,23 @@ _G.packer_plugins = {
     path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/lspsaga.nvim"
   },
   ["neoscroll.nvim"] = {
-    config = { "\27LJ\2\0027\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14neoscroll\frequire\0" },
+    config = { "\27LJ\1\0027\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\14neoscroll\frequire\0" },
     loaded = true,
     path = "/home/jeremy/.local/share/nvim/site/pack/packer/start/neoscroll.nvim"
   },
   ["nvim-autopairs"] = {
-    config = { "\27LJ\2\2<\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0" },
+    config = { "\27LJ\1\2<\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\19nvim-autopairs\frequire\0" },
     loaded = true,
     path = "/home/jeremy/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
   },
   ["nvim-colorizer.lua"] = {
-    config = { "\27LJ\2\0027\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14colorizer\frequire\0" },
+    config = { "\27LJ\1\0027\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\14colorizer\frequire\0" },
     loaded = true,
     path = "/home/jeremy/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
   },
   ["nvim-compe"] = {
     after_files = { "/home/jeremy/.local/share/nvim/site/pack/packer/opt/nvim-compe/after/plugin/compe.vim" },
-    config = { "\27LJ\2\2;\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0 languages.config.nvim-compe\frequire\0" },
+    config = { "\27LJ\1\2;\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0 languages.config.nvim-compe\frequire\0" },
     loaded = false,
     needs_bufread = false,
     path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/nvim-compe",
@@ -197,19 +197,19 @@ _G.packer_plugins = {
     path = "/home/jeremy/.local/share/nvim/site/pack/packer/start/nvim-nonicons"
   },
   ["nvim-toggleterm.lua"] = {
-    config = { "\27LJ\2\2;\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0 core.config.nvim-toggleterm\frequire\0" },
+    config = { "\27LJ\1\2;\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0 core.config.nvim-toggleterm\frequire\0" },
     loaded = false,
     needs_bufread = false,
     path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/nvim-toggleterm.lua"
   },
   ["nvim-transparent"] = {
-    config = { "\27LJ\2\2?\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0$plugins.config.nvim-transparent\frequire\0" },
+    config = { "\27LJ\1\2?\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0$plugins.config.nvim-transparent\frequire\0" },
     loaded = false,
     needs_bufread = false,
     path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/nvim-transparent"
   },
   ["nvim-tree.lua"] = {
-    config = { "\27LJ\2\0025\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\26core.config.nvim-tree\frequire\0" },
+    config = { "\27LJ\1\0025\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\26core.config.nvim-tree\frequire\0" },
     loaded = false,
     needs_bufread = false,
     path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/nvim-tree.lua"
@@ -268,13 +268,13 @@ _G.packer_plugins = {
     path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/spellsitter.nvim"
   },
   ["telescope.nvim"] = {
-    config = { "\27LJ\2\0025\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\26core.config.telescope\frequire\0" },
+    config = { "\27LJ\1\0025\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\26core.config.telescope\frequire\0" },
     loaded = false,
     needs_bufread = false,
     path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/telescope.nvim"
   },
   ["todo-comments.nvim"] = {
-    config = { "\27LJ\2\2<\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0!plugins.config.todo-comments\frequire\0" },
+    config = { "\27LJ\1\2<\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0!plugins.config.todo-comments\frequire\0" },
     loaded = false,
     needs_bufread = false,
     path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/todo-comments.nvim"
@@ -288,12 +288,12 @@ _G.packer_plugins = {
     path = "/home/jeremy/.local/share/nvim/site/pack/packer/start/vim-cursorword"
   },
   ["vim-rooter"] = {
-    config = { "\27LJ\2\0025\0\0\2\0\3\0\0056\0\0\0009\0\1\0)\1\1\0=\1\2\0K\0\1\0\24rooter_silent_chdir\6g\bvim\0" },
+    config = { "\27LJ\1\0025\0\0\2\0\3\0\0054\0\0\0007\0\1\0'\1\1\0:\1\2\0G\0\1\0\24rooter_silent_chdir\6g\bvim\0" },
     loaded = true,
     path = "/home/jeremy/.local/share/nvim/site/pack/packer/start/vim-rooter"
   },
   ["vim-sayonara"] = {
-    config = { "\27LJ\2\0028\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\29core.config.vim-sayonara\frequire\0" },
+    config = { "\27LJ\1\0028\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\29core.config.vim-sayonara\frequire\0" },
     loaded = false,
     needs_bufread = false,
     path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/vim-sayonara"
@@ -315,13 +315,13 @@ _G.packer_plugins = {
     path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/vim-vsnip-integ"
   },
   ["vista.vim"] = {
-    config = { "\27LJ\2\0021\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\22core.config.vista\frequire\0" },
+    config = { "\27LJ\1\0021\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\22core.config.vista\frequire\0" },
     loaded = false,
     needs_bufread = false,
     path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/vista.vim"
   },
   ["which-key.nvim"] = {
-    config = { "\27LJ\2\0028\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\29plugins.config.which-key\frequire\0" },
+    config = { "\27LJ\1\0028\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\29plugins.config.which-key\frequire\0" },
     loaded = false,
     needs_bufread = false,
     path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/which-key.nvim"
@@ -331,39 +331,39 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Config for: nvim-treesitter
 time([[Config for nvim-treesitter]], true)
-try_loadstring("\27LJ\2\2;\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0 core.config.nvim-treesitter\frequire\0", "config", "nvim-treesitter")
+try_loadstring("\27LJ\1\2;\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0 core.config.nvim-treesitter\frequire\0", "config", "nvim-treesitter")
 time([[Config for nvim-treesitter]], false)
 -- Config for: dial.nvim
 time([[Config for dial.nvim]], true)
-try_loadstring("\27LJ\2\2\v\0\0\1\0\0\0\1K\0\1\0\0", "config", "dial.nvim")
+try_loadstring("\27LJ\1\2\v\0\0\1\0\0\0\1G\0\1\0\0", "config", "dial.nvim")
 time([[Config for dial.nvim]], false)
 -- Config for: nvim-colorizer.lua
 time([[Config for nvim-colorizer.lua]], true)
-try_loadstring("\27LJ\2\0027\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14colorizer\frequire\0", "config", "nvim-colorizer.lua")
+try_loadstring("\27LJ\1\0027\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\14colorizer\frequire\0", "config", "nvim-colorizer.lua")
 time([[Config for nvim-colorizer.lua]], false)
 -- Config for: vim-rooter
 time([[Config for vim-rooter]], true)
-try_loadstring("\27LJ\2\0025\0\0\2\0\3\0\0056\0\0\0009\0\1\0)\1\1\0=\1\2\0K\0\1\0\24rooter_silent_chdir\6g\bvim\0", "config", "vim-rooter")
+try_loadstring("\27LJ\1\0025\0\0\2\0\3\0\0054\0\0\0007\0\1\0'\1\1\0:\1\2\0G\0\1\0\24rooter_silent_chdir\6g\bvim\0", "config", "vim-rooter")
 time([[Config for vim-rooter]], false)
 -- Config for: accelerated-jk
 time([[Config for accelerated-jk]], true)
-try_loadstring("\27LJ\2\2:\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\31core.config.accelerated-jk\frequire\0", "config", "accelerated-jk")
+try_loadstring("\27LJ\1\2:\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\31core.config.accelerated-jk\frequire\0", "config", "accelerated-jk")
 time([[Config for accelerated-jk]], false)
 -- Config for: kommentary
 time([[Config for kommentary]], true)
-try_loadstring("\27LJ\2\2;\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0 languages.config.kommentary\frequire\0", "config", "kommentary")
+try_loadstring("\27LJ\1\2;\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0 languages.config.kommentary\frequire\0", "config", "kommentary")
 time([[Config for kommentary]], false)
 -- Config for: neoscroll.nvim
 time([[Config for neoscroll.nvim]], true)
-try_loadstring("\27LJ\2\0027\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14neoscroll\frequire\0", "config", "neoscroll.nvim")
+try_loadstring("\27LJ\1\0027\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\14neoscroll\frequire\0", "config", "neoscroll.nvim")
 time([[Config for neoscroll.nvim]], false)
 -- Config for: nvim-autopairs
 time([[Config for nvim-autopairs]], true)
-try_loadstring("\27LJ\2\2<\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
+try_loadstring("\27LJ\1\2<\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
 time([[Config for nvim-autopairs]], false)
 -- Config for: nvim-lspconfig
 time([[Config for nvim-lspconfig]], true)
-try_loadstring("\27LJ\2\2?\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0$languages.config.nvim-lspconfig\frequire\0", "config", "nvim-lspconfig")
+try_loadstring("\27LJ\1\2?\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0$languages.config.nvim-lspconfig\frequire\0", "config", "nvim-lspconfig")
 time([[Config for nvim-lspconfig]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
