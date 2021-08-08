@@ -252,7 +252,7 @@ saga.init_lsp_saga {
 	error_sign = '✖️',
 	warn_sign = '⚠️ ',
 	hint_sign = '☀️ ',
-	infor_sign = 'ℹ️',
+	infor_sign = ' ℹ️',
 	dianostic_header_icon = '   ',
 	code_action_icon = ' '
 }
@@ -260,10 +260,16 @@ saga.init_lsp_saga {
 -------------------------------
 --NOTE: define the diagnostic color
 
-vim.cmd("hi LspDiagnosticsVirtualTextWarning guifg='yellow'")
-vim.cmd("hi LspDiagnosticsVirtualTextError guifg='#db4b4b'")
-vim.cmd("hi LspDiagnosticsVirtualTextInformation guifg='#0db9d7'")
-vim.cmd("hi LspDiagnosticsVirtualTextHint guifg='#10B981'")
+vim.cmd("hi VirtualTextWarning guifg='yellow'")
+vim.cmd("hi VirtualTextError guifg='red'")
+vim.cmd("hi VirtualTextInformation guifg='#0db9d7'")
+vim.cmd("hi VirtualTextHint guifg=#2c6e4e")
+vim.cmd("hi ErrorText cterm=underline gui=undercurl guisp=red")
+vim.cmd("hi WarningText cterm=underline gui=undercurl guisp=yellow")
+vim.cmd("hi HintText cterm=underline gui=undercurl guisp=#2c6e4e")
+vim.cmd("hi InformationText cterm=underline gui=undercurl guisp=#0db9d7")
+vim.cmd("hi CursorWord0 ctermbg=239 guibg=#3d3c3b")
+vim.cmd("hi SpellBad cterm=underline gui=undercurl guisp=None")
 
 --NOTE: define the auto format on save
 vim.api.nvim_exec(
@@ -275,3 +281,4 @@ augroup END
 ]],
 	true
 )
+

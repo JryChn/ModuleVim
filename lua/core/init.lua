@@ -213,6 +213,16 @@ packer.startup(function(use)
 	use {
 		'projekt0n/github-nvim-theme',
 		config = function()
+			vim.cmd("hi VirtualTextWarning guifg='yellow'")
+			vim.cmd("hi VirtualTextError guifg='red'")
+			vim.cmd("hi VirtualTextInformation guifg='#0db9d7'")
+			vim.cmd("hi VirtualTextHint guifg='#2c6e4e'")
+			vim.cmd("hi ErrorText cterm=underline gui=undercurl guisp=red")
+			vim.cmd("hi WarningText cterm=underline gui=undercurl guisp=yellow")
+			vim.cmd("hi HintText cterm=underline gui=undercurl guisp=#2c6e4e")
+			vim.cmd("hi InformationText cterm=underline gui=undercurl guisp=#0db9d7")
+			vim.cmd("hi CursorWord0 ctermbg=239 guibg=#3d3c3b")
+			vim.cmd("hi SpellBad cterm=underline gui=undercurl guisp=None")
 			vim.api.nvim_set_keymap(
 				'n',
 				'<space>tc1',
@@ -229,15 +239,20 @@ packer.startup(function(use)
 			vim.g.gruvbox_material_background = 'medium'
 			vim.g.gruvbox_material_palette = 'mix'
 			vim.cmd("colorscheme gruvbox-material")
-			vim.cmd("hi LspDiagnosticsVirtualTextWarning guifg='yellow'")
-			vim.cmd("hi LspDiagnosticsVirtualTextError guifg='#db4b4b'")
-			vim.cmd("hi LspDiagnosticsVirtualTextInformation guifg='#0db9d7'")
-			vim.cmd("hi LspDiagnosticsVirtualTextHint guifg='#10B981'")
 			vim.api.nvim_command('highlight default HopNextKey  guifg=#ff007c gui=bold ctermfg=198 cterm=bold')
-
 			vim.api.nvim_command('highlight default HopNextKey1 guifg=#00dfff gui=bold ctermfg=45 cterm=bold')
 			vim.api.nvim_command('highlight default HopNextKey2 guifg=#2b8db3 ctermfg=33')
 			vim.api.nvim_command('highlight default HopUnmatched guifg=#666666 ctermfg=242')
+			vim.cmd("hi VirtualTextWarning guifg='yellow'")
+			vim.cmd("hi VirtualTextError guifg='red'")
+			vim.cmd("hi VirtualTextInformation guifg='#0db9d7'")
+			vim.cmd("hi VirtualTextHint guifg='#2c6e4e'")
+			vim.cmd("hi ErrorText cterm=underline gui=undercurl guisp=red")
+			vim.cmd("hi WarningText cterm=underline gui=undercurl guisp=yellow")
+			vim.cmd("hi HintText cterm=underline gui=undercurl guisp=#2c6e4e")
+			vim.cmd("hi InformationText cterm=underline gui=undercurl guisp=#0db9d7")
+			vim.cmd("hi CursorWord0 ctermbg=239 guibg=#3d3c3b")
+			vim.cmd("hi SpellBad cterm=underline gui=undercurl guisp=None")
 			vim.api.nvim_set_keymap(
 				'n',
 				'<space>tc2',
@@ -251,6 +266,16 @@ packer.startup(function(use)
 		'sainnhe/everforest',
 		requires = {"sainnhe/sonokai", "Th3Whit3Wolf/space-nvim"},
 		config = function()
+			vim.cmd("hi VirtualTextWarning guifg='yellow'")
+			vim.cmd("hi VirtualTextError guifg='red'")
+			vim.cmd("hi VirtualTextInformation guifg='#0db9d7'")
+			vim.cmd("hi VirtualTextHint guifg='#2c6e4e'")
+			vim.cmd("hi ErrorText cterm=underline gui=undercurl guisp=red")
+			vim.cmd("hi WarningText cterm=underline gui=undercurl guisp=yellow")
+			vim.cmd("hi HintText cterm=underline gui=undercurl guisp=#2c6e4e")
+			vim.cmd("hi InformationText cterm=underline gui=undercurl guisp=#0db9d7")
+			vim.cmd("hi CursorWord0 ctermbg=239 guibg=#3d3c3b")
+			vim.cmd("hi SpellBad cterm=underline gui=undercurl guisp=None")
 			vim.api.nvim_set_keymap(
 				'n',
 				'<space>tc3',
@@ -316,7 +341,7 @@ packer.startup(function(use)
 		config = function()
 			require 'plugins.config.hop'
 		end,
-		event = "BufRead"
+		event = "BufRead",
 	}
 	use {
 		--highlight and search for todo comments

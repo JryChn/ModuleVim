@@ -129,3 +129,4 @@ for name, value in pairs(buffer) do
 	end
 end
 
+vim.cmd("hi SpellBad cterm=underline gui=undercurl guisp=None")
