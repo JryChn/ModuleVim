@@ -202,6 +202,17 @@ packer.startup(function(use)
 		end
 	}
 
+	use {
+		--debug plugin
+		"mfussenegger/nvim-dap",
+		requires = {"rcarriga/nvim-dap-ui", "Pocco81/DAPInstall.nvim"},
+		config = function()
+			require 'languages.config.nvim-dap'
+		end,
+
+		-- event = 'BufferRead'
+	}
+
 	--use{ --formatter TODO: Not use now, instead by lsp
 	--'mhartington/formatter.nvim',
 	--config = function()
