@@ -205,7 +205,7 @@ packer.startup(function(use)
 	use {
 		--debug plugin
 		"mfussenegger/nvim-dap",
-		requires = {"rcarriga/nvim-dap-ui", "Pocco81/DAPInstall.nvim"},
+		requires = {"rcarriga/nvim-dap-ui", "Pocco81/DAPInstall.nvim","theHamsta/nvim-dap-virtual-text"},
 		config = function()
 			require 'languages.config.nvim-dap'
 		end,
@@ -226,7 +226,7 @@ packer.startup(function(use)
 		config = function()
 			vim.cmd("hi VirtualTextWarning guifg='yellow'")
 			vim.cmd("hi VirtualTextError guifg='red'")
-			vim.cmd("hi VirtualTextInformation guifg='#0db9d7'")
+			vim.cmd("hi VirtualTextInfo guifg='#0db9d7'")
 			vim.cmd("hi VirtualTextHint guifg='#2c6e4e'")
 			vim.cmd("hi ErrorText cterm=underline gui=undercurl guisp=red")
 			vim.cmd("hi WarningText cterm=underline gui=undercurl guisp=yellow")
@@ -256,7 +256,7 @@ packer.startup(function(use)
 			vim.api.nvim_command('highlight default HopUnmatched guifg=#666666 ctermfg=242')
 			vim.cmd("hi VirtualTextWarning guifg='yellow'")
 			vim.cmd("hi VirtualTextError guifg='red'")
-			vim.cmd("hi VirtualTextInformation guifg='#0db9d7'")
+			vim.cmd("hi VirtualTextInfo guifg='#0db9d7'")
 			vim.cmd("hi VirtualTextHint guifg='#2c6e4e'")
 			vim.cmd("hi ErrorText cterm=underline gui=undercurl guisp=red")
 			vim.cmd("hi WarningText cterm=underline gui=undercurl guisp=yellow")
@@ -279,7 +279,7 @@ packer.startup(function(use)
 		config = function()
 			vim.cmd("hi VirtualTextWarning guifg='yellow'")
 			vim.cmd("hi VirtualTextError guifg='red'")
-			vim.cmd("hi VirtualTextInformation guifg='#0db9d7'")
+			vim.cmd("hi VirtualTextInfo guifg='#0db9d7'")
 			vim.cmd("hi VirtualTextHint guifg='#2c6e4e'")
 			vim.cmd("hi ErrorText cterm=underline gui=undercurl guisp=red")
 			vim.cmd("hi WarningText cterm=underline gui=undercurl guisp=yellow")

@@ -58,6 +58,7 @@ require 'gitsigns'.setup({
 		['n <space>gR'] = '<cmd>lua require"gitsigns".reset_buffer()<CR>',
 		['n <space>gp'] = '<cmd>lua require"gitsigns".preview_hunk()<CR>',
 		['n <space>gb'] = '<cmd>lua require"gitsigns".blame_line(true)<CR>',
+		['n <space>gl'] = '<cmd>Gitsigns toggle_current_line_blame<CR>',
 
 		-- Text objects
 		['o ih'] = ':<C-U>lua require"gitsigns.actions".select_hunk()<CR>',

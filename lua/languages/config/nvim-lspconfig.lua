@@ -249,12 +249,12 @@ vim.cmd ' packadd lspsaga.nvim'
 local saga = require 'lspsaga'
 saga.init_lsp_saga {
 	use_saga_diagnostic_sign = true,
-	error_sign = '✖️',
+	error_sign = '❌',
 	warn_sign = '⚠️ ',
-	hint_sign = '☀️ ',
-	infor_sign = ' ℹ️',
-	dianostic_header_icon = '   ',
-	code_action_icon = ' '
+	hint_sign = '🌱',
+	infor_sign = 'ℹ️',
+	dianostic_header_icon = '🐞',
+	code_action_icon = '💡'
 }
 
 -------------------------------
@@ -262,7 +262,7 @@ saga.init_lsp_saga {
 
 vim.cmd("hi VirtualTextWarning guifg='yellow'")
 vim.cmd("hi VirtualTextError guifg='red'")
-vim.cmd("hi VirtualTextInformation guifg='#0db9d7'")
+vim.cmd("hi VirtualTextInfo guifg='#0db9d7'")
 vim.cmd("hi VirtualTextHint guifg=#2c6e4e")
 vim.cmd("hi ErrorText cterm=underline gui=undercurl guisp=red")
 vim.cmd("hi WarningText cterm=underline gui=undercurl guisp=yellow")
