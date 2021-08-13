@@ -3,7 +3,7 @@ vim.g.nvim_tree_bindings = {
 	{key = {"<CR>", "o", "l"}, cb = tree_cb("edit")},
 	{key = {"<C-]>"}, cb = tree_cb("cd")},
 	{key = "v", cb = tree_cb("vsplit")},
-	{key = "x", cb = tree_cb("split")},
+	{key = "s", cb = tree_cb("split")},
 	{key = "t", cb = tree_cb("tabnew")},
 	{key = "<", cb = tree_cb("prev_sibling")},
 	{key = ">", cb = tree_cb("next_sibling")},
