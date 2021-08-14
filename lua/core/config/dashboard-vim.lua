@@ -23,10 +23,10 @@ vim.g.dashboard_custom_section = {
 	},
 	find_history = {
 		description = {"  Recently opened files   "},
-		command = "DashboardFindHistory"
+		command = "lua require('telescope.builtin').oldfiles()"
 	},
 	find_file = {
 		description = {"  Find  File              "},
-		command = "DashboardFindFile"
+		command = "lua require('telescope.builtin').find_files()"
 	}
 }

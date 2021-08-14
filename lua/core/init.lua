@@ -205,7 +205,11 @@ packer.startup(function(use)
 	use {
 		--debug plugin
 		"mfussenegger/nvim-dap",
-		requires = {"rcarriga/nvim-dap-ui", "Pocco81/DAPInstall.nvim","theHamsta/nvim-dap-virtual-text"},
+		requires = {
+			"rcarriga/nvim-dap-ui",
+			"Pocco81/DAPInstall.nvim",
+			"theHamsta/nvim-dap-virtual-text"
+		},
 		config = function()
 			require 'languages.config.nvim-dap'
 		end,

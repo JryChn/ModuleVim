@@ -34,11 +34,11 @@ dap_install.setup({
 local dbg_list = require("dap-install.debuggers_list").debuggers
 
 for debugger, _ in pairs(dbg_list) do
-    if debugger=="go_delve_dbg"
-        then
-	dap_install.config(debugger, {})
+	if debugger == "go_delve_dbg" then
+		dap_install.config(debugger, {})
+	end
 end
-end
+
 -- ui
 vim.g.dap_virtual_text = 'all frames'
 require("dapui").setup({
