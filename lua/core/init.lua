@@ -13,8 +13,8 @@ packer.startup(function(use)
 	-----------NOTE:core layer-----------
 	use {
 		--Icon sets for neovim plugins and settings
-		'yamatsum/nvim-nonicons',
-		requires = {'kyazdani42/nvim-web-devicons'}
+		-- 'yamatsum/nvim-nonicons',
+		-- requires = {'kyazdani42/nvim-web-devicons'}
 	}
 	use {
 		--vim plugin to accelerate up-down moving

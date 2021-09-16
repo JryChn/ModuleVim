@@ -31,7 +31,7 @@ dap_install.setup({
 	installation_path = vim.fn.stdpath("data") .. "/dapinstall/",
 	verbosely_call_debuggers = false,
 })
-local dbg_list = require("dap-install.debuggers_list").debuggers
+local dbg_list = require("dap-install.api.debuggers").get_installed_debuggers()
 
 for debugger, _ in pairs(dbg_list) do
 	if debugger == "go_delve_dbg" then

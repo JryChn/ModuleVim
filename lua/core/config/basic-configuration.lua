@@ -4,7 +4,7 @@
 vim.api.nvim_set_keymap("n", "<Tab>", ":wincmd w<CR>", {silent = true})
 vim.api.nvim_set_keymap("i", "jk", "<ESC>", {silent = true})
 vim.api.nvim_set_keymap("n", "<C-s>", ":w!<CR>", {noremap = true})
-vim.api.nvim_set_keymap("i", "<C-s>", ":<ESC>w!<CR>", {noremap = true})
+vim.api.nvim_set_keymap("i", "<C-s>", "<ESC>:w!<CR>", {noremap = true})
 vim.cmd([[
   nnoremap <silent> <C-Up>    :resize -2<CR>
   nnoremap <silent> <C-Down>  :resize +2<CR>
