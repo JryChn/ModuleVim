@@ -169,29 +169,39 @@ packer.startup(function(use)
 	}
 	use {
 		--auto completion
-		'hrsh7th/nvim-compe',
-		wants = "vim-vsnip",
-		event = "InsertCharPre",
+		'hrsh7th/nvim-cmp',
+
+		-- event = "InsertCharPre",
 		requires = {
+			{'onsails/lspkind-nvim'},
 			{
 				'hrsh7th/vim-vsnip',
 				requires = {'rafamadriz/friendly-snippets'},
-				wants = "friendly-snippets",
-				event = "InsertCharPre"
 			},
 			{
 				'hrsh7th/vim-vsnip-integ',
 				after = 'vim-vsnip',
-				event = "InsertCharPre"
 			},
 			{
-				'tzachar/compe-tabnine',
+				'tzachar/cmp-tabnine',
 				run = "./install.sh",
-				event = "InsertCharPre"
-			}
+			},
+			'hrsh7th/cmp-nvim-lsp',
+			'hrsh7th/cmp-buffer',
+			'hrsh7th/cmp-path',
+			'hrsh7th/cmp-nvim-lua',
+			'octaltree/cmp-look',
+			'hrsh7th/cmp-vsnip',
+			'kdheepak/cmp-latex-symbols',
+			'hrsh7th/cmp-calc',
+			'ray-x/cmp-treesitter',
+			'hrsh7th/cmp-emoji',
+			'hrsh7th/cmp-emoji',
+			'f3fora/cmp-spell',
+			'quangnguyen30192/cmp-nvim-tags'
 		},
 		config = function()
-			require 'languages.config.nvim-compe'
+			require 'languages.config.nvim-cmp'
 		end
 	}
 	use {

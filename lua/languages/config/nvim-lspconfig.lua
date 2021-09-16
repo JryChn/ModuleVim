@@ -230,19 +230,13 @@ local function setup_servers()
 				}
 			}
 		end
-        nvim_lsp["lua"].setup {
-				on_attach = on_attach,
-				flags = {
-					debounce_text_changes = 150,
-				},
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { 'vim' }
-            }
-        }
-    }
-}
+		nvim_lsp["lua"].setup {
+			on_attach = on_attach,
+			flags = {
+				debounce_text_changes = 150,
+			},
+			settings = {Lua = {diagnostics = {globals = {'vim'}}}}
+		}
 	end
 end
 
