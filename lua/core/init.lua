@@ -170,35 +170,52 @@ packer.startup(function(use)
 	use {
 		--auto completion
 		'hrsh7th/nvim-cmp',
-
-		-- event = "InsertCharPre",
 		requires = {
 			{'onsails/lspkind-nvim'},
 			{
 				'hrsh7th/vim-vsnip',
 				requires = {'rafamadriz/friendly-snippets'},
+				event = "InsertCharPre"
 			},
 			{
 				'hrsh7th/vim-vsnip-integ',
-				after = 'vim-vsnip',
+				after = "vim-vsnip",
 			},
 			{
 				'tzachar/cmp-tabnine',
 				run = "./install.sh",
+				after = "nvim-cmp",
+				event = "InsertCharPre"
 			},
-			'hrsh7th/cmp-nvim-lsp',
-			'hrsh7th/cmp-buffer',
-			'hrsh7th/cmp-path',
-			'hrsh7th/cmp-nvim-lua',
-			'octaltree/cmp-look',
-			'hrsh7th/cmp-vsnip',
-			'kdheepak/cmp-latex-symbols',
-			'hrsh7th/cmp-calc',
-			'ray-x/cmp-treesitter',
-			'hrsh7th/cmp-emoji',
-			'hrsh7th/cmp-emoji',
-			'f3fora/cmp-spell',
-			'quangnguyen30192/cmp-nvim-tags'
+			{'hrsh7th/cmp-nvim-lsp'},
+			{'hrsh7th/cmp-buffer', after = "nvim-cmp", event = "InsertCharPre"},
+			{'hrsh7th/cmp-path', after = "nvim-cmp", event = "InsertCharPre"},
+			{
+				'hrsh7th/cmp-nvim-lua',
+				after = "nvim-cmp",
+				event = "InsertCharPre"
+			},
+			{'octaltree/cmp-look', after = "nvim-cmp", event = "InsertCharPre"},
+			{'hrsh7th/cmp-vsnip', after = "nvim-cmp", event = "InsertCharPre"},
+			{'kdheepak/cmp-latex-symbols', after = "nvim-cmp", ft = "tex"},
+			{'hrsh7th/cmp-calc', after = "nvim-cmp", event = "InsertCharPre"},
+			{
+				'ray-x/cmp-treesitter',
+				after = "nvim-cmp",
+				event = "InsertCharPre"
+			},
+			{
+				'quangnguyen30192/cmp-nvim-ultisnips',
+				after = "nvim-cmp",
+				event = "InsertCharPre"
+			},
+			{'hrsh7th/cmp-emoji', after = "nvim-cmp", event = "InsertCharPre"},
+			{'f3fora/cmp-spell', after = "nvim-cmp", event = "InsertCharPre"},
+			{
+				'quangnguyen30192/cmp-nvim-tags',
+				after = "nvim-cmp",
+				event = "InsertCharPre"
+			}
 		},
 		config = function()
 			require 'languages.config.nvim-cmp'

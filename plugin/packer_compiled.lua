@@ -95,56 +95,125 @@ local no_errors, error_msg = pcall(function()
 			path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/barbar.nvim"
 		},
 		["cmp-buffer"] = {
-			loaded = true,
-			path = "/home/jeremy/.local/share/nvim/site/pack/packer/start/cmp-buffer"
+			after_files = {
+				"/home/jeremy/.local/share/nvim/site/pack/packer/opt/cmp-buffer/after/plugin/cmp_buffer.lua"
+			},
+			load_after = {},
+			loaded = false,
+			needs_bufread = false,
+			path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/cmp-buffer"
 		},
 		["cmp-calc"] = {
-			loaded = true,
-			path = "/home/jeremy/.local/share/nvim/site/pack/packer/start/cmp-calc"
+			after_files = {
+				"/home/jeremy/.local/share/nvim/site/pack/packer/opt/cmp-calc/after/plugin/cmp_calc.lua"
+			},
+			load_after = {},
+			loaded = false,
+			needs_bufread = false,
+			path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/cmp-calc"
 		},
 		["cmp-emoji"] = {
-			loaded = true,
-			path = "/home/jeremy/.local/share/nvim/site/pack/packer/start/cmp-emoji"
+			after_files = {
+				"/home/jeremy/.local/share/nvim/site/pack/packer/opt/cmp-emoji/after/plugin/cmp_emoji.lua"
+			},
+			load_after = {},
+			loaded = false,
+			needs_bufread = false,
+			path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/cmp-emoji"
 		},
 		["cmp-latex-symbols"] = {
-			loaded = true,
-			path = "/home/jeremy/.local/share/nvim/site/pack/packer/start/cmp-latex-symbols"
+			after_files = {
+				"/home/jeremy/.local/share/nvim/site/pack/packer/opt/cmp-latex-symbols/after/plugin/cmp_latex.lua"
+			},
+			load_after = {},
+			loaded = false,
+			needs_bufread = false,
+			path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/cmp-latex-symbols"
 		},
 		["cmp-look"] = {
-			loaded = true,
-			path = "/home/jeremy/.local/share/nvim/site/pack/packer/start/cmp-look"
+			after_files = {
+				"/home/jeremy/.local/share/nvim/site/pack/packer/opt/cmp-look/after/plugin/cmp_look.lua"
+			},
+			load_after = {},
+			loaded = false,
+			needs_bufread = false,
+			path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/cmp-look"
 		},
 		["cmp-nvim-lsp"] = {
 			loaded = true,
 			path = "/home/jeremy/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp"
 		},
 		["cmp-nvim-lua"] = {
-			loaded = true,
-			path = "/home/jeremy/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua"
+			after_files = {
+				"/home/jeremy/.local/share/nvim/site/pack/packer/opt/cmp-nvim-lua/after/plugin/cmp_nvim_lua.lua"
+			},
+			load_after = {},
+			loaded = false,
+			needs_bufread = false,
+			path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/cmp-nvim-lua"
 		},
 		["cmp-nvim-tags"] = {
-			loaded = true,
-			path = "/home/jeremy/.local/share/nvim/site/pack/packer/start/cmp-nvim-tags"
+			after_files = {
+				"/home/jeremy/.local/share/nvim/site/pack/packer/opt/cmp-nvim-tags/after/plugin/cmp_nvim_tags.lua"
+			},
+			load_after = {},
+			loaded = false,
+			needs_bufread = false,
+			path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/cmp-nvim-tags"
+		},
+		["cmp-nvim-ultisnips"] = {
+			after_files = {
+				"/home/jeremy/.local/share/nvim/site/pack/packer/opt/cmp-nvim-ultisnips/after/plugin/cmp_nvim_ultisnips.lua"
+			},
+			load_after = {},
+			loaded = false,
+			needs_bufread = false,
+			path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/cmp-nvim-ultisnips"
 		},
 		["cmp-path"] = {
-			loaded = true,
-			path = "/home/jeremy/.local/share/nvim/site/pack/packer/start/cmp-path"
+			after_files = {
+				"/home/jeremy/.local/share/nvim/site/pack/packer/opt/cmp-path/after/plugin/cmp_path.lua"
+			},
+			load_after = {},
+			loaded = false,
+			needs_bufread = false,
+			path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/cmp-path"
 		},
 		["cmp-spell"] = {
-			loaded = true,
-			path = "/home/jeremy/.local/share/nvim/site/pack/packer/start/cmp-spell"
+			after_files = {
+				"/home/jeremy/.local/share/nvim/site/pack/packer/opt/cmp-spell/after/plugin/cmp-spell.lua"
+			},
+			load_after = {},
+			loaded = false,
+			needs_bufread = false,
+			path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/cmp-spell"
 		},
 		["cmp-tabnine"] = {
-			loaded = true,
-			path = "/home/jeremy/.local/share/nvim/site/pack/packer/start/cmp-tabnine"
+			after_files = {
+				"/home/jeremy/.local/share/nvim/site/pack/packer/opt/cmp-tabnine/after/plugin/cmp-tabnine.lua"
+			},
+			load_after = {},
+			loaded = false,
+			needs_bufread = false,
+			path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/cmp-tabnine"
 		},
 		["cmp-treesitter"] = {
-			loaded = true,
-			path = "/home/jeremy/.local/share/nvim/site/pack/packer/start/cmp-treesitter"
+			after_files = {
+				"/home/jeremy/.local/share/nvim/site/pack/packer/opt/cmp-treesitter/after/plugin/cmp_treesitter.lua"
+			},
+			load_after = {},
+			loaded = false,
+			needs_bufread = false,
+			path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/cmp-treesitter"
 		},
 		["cmp-vsnip"] = {
-			loaded = true,
-			path = "/home/jeremy/.local/share/nvim/site/pack/packer/start/cmp-vsnip"
+			after_files = {
+				"/home/jeremy/.local/share/nvim/site/pack/packer/opt/cmp-vsnip/after/plugin/cmp_vsnip.vim"
+			},
+			load_after = {},
+			loaded = false,
+			needs_bufread = false,
+			path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/cmp-vsnip"
 		},
 		["dashboard-nvim"] = {
 			config = {
@@ -251,11 +320,23 @@ local no_errors, error_msg = pcall(function()
 			path = "/home/jeremy/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
 		},
 		["nvim-cmp"] = {
-			config = {
-				"\27LJ\1\0029\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\30languages.config.nvim-cmp\frequire\0"
+			after = {
+				"cmp-vsnip",
+				"cmp-treesitter",
+				"cmp-latex-symbols",
+				"cmp-nvim-ultisnips",
+				"cmp-calc",
+				"cmp-spell",
+				"cmp-nvim-tags",
+				"cmp-look",
+				"cmp-tabnine",
+				"cmp-buffer",
+				"cmp-path",
+				"cmp-emoji",
+				"cmp-nvim-lua"
 			},
 			loaded = true,
-			path = "/home/jeremy/.local/share/nvim/site/pack/packer/start/nvim-cmp"
+			only_config = true
 		},
 		["nvim-colorizer.lua"] = {
 			config = {
@@ -286,7 +367,7 @@ local no_errors, error_msg = pcall(function()
 			path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/nvim-jdtls"
 		},
 		["nvim-lspconfig"] = {
-			after = {"nvim-jdtls", "lspsaga.nvim", "nvim-lspinstall"},
+			after = {"nvim-jdtls", "nvim-lspinstall", "lspsaga.nvim"},
 			loaded = true,
 			only_config = true
 		},
@@ -326,10 +407,10 @@ local no_errors, error_msg = pcall(function()
 		},
 		["nvim-treesitter"] = {
 			after = {
-				"nvim-ts-autotag",
-				"nvim-treesitter-textobjects",
+				"nvim-ts-rainbow",
 				"spellsitter.nvim",
-				"nvim-ts-rainbow"
+				"nvim-treesitter-textobjects",
+				"nvim-ts-autotag"
 			},
 			loaded = true,
 			only_config = true
@@ -422,14 +503,17 @@ local no_errors, error_msg = pcall(function()
 			path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/vim-sayonara"
 		},
 		["vim-vsnip"] = {
-			loaded = true,
-			path = "/home/jeremy/.local/share/nvim/site/pack/packer/start/vim-vsnip"
+			after = {"vim-vsnip-integ"},
+			loaded = false,
+			needs_bufread = false,
+			path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/vim-vsnip"
 		},
 		["vim-vsnip-integ"] = {
 			after_files = {
 				"/home/jeremy/.local/share/nvim/site/pack/packer/opt/vim-vsnip-integ/after/plugin/vsnip_integ.vim"
 			},
-			loaded = true,
+			load_after = {["vim-vsnip"] = true},
+			loaded = false,
 			needs_bufread = false,
 			path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/vim-vsnip-integ"
 		},
@@ -453,14 +537,14 @@ local no_errors, error_msg = pcall(function()
 
 	time([[Defining packer_plugins]], false)
 
-	-- Config for: nvim-treesitter
-	time([[Config for nvim-treesitter]], true)
+	-- Config for: nvim-lspconfig
+	time([[Config for nvim-lspconfig]], true)
 	try_loadstring(
-		"\27LJ\1\2;\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0 core.config.nvim-treesitter\frequire\0",
+		"\27LJ\1\2?\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0$languages.config.nvim-lspconfig\frequire\0",
 		"config",
-		"nvim-treesitter"
+		"nvim-lspconfig"
 	)
-	time([[Config for nvim-treesitter]], false)
+	time([[Config for nvim-lspconfig]], false)
 
 	-- Config for: nvim-cmp
 	time([[Config for nvim-cmp]], true)
@@ -480,14 +564,14 @@ local no_errors, error_msg = pcall(function()
 	)
 	time([[Config for nvim-colorizer.lua]], false)
 
-	-- Config for: neoscroll.nvim
-	time([[Config for neoscroll.nvim]], true)
+	-- Config for: vim-rooter
+	time([[Config for vim-rooter]], true)
 	try_loadstring(
-		"\27LJ\1\0027\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\14neoscroll\frequire\0",
+		"\27LJ\1\0025\0\0\2\0\3\0\0054\0\0\0007\0\1\0'\1\1\0:\1\2\0G\0\1\0\24rooter_silent_chdir\6g\bvim\0",
 		"config",
-		"neoscroll.nvim"
+		"vim-rooter"
 	)
-	time([[Config for neoscroll.nvim]], false)
+	time([[Config for vim-rooter]], false)
 
 	-- Config for: accelerated-jk
 	time([[Config for accelerated-jk]], true)
@@ -507,14 +591,14 @@ local no_errors, error_msg = pcall(function()
 	)
 	time([[Config for nvim-dap]], false)
 
-	-- Config for: nvim-lspconfig
-	time([[Config for nvim-lspconfig]], true)
+	-- Config for: neoscroll.nvim
+	time([[Config for neoscroll.nvim]], true)
 	try_loadstring(
-		"\27LJ\1\2?\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0$languages.config.nvim-lspconfig\frequire\0",
+		"\27LJ\1\0027\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\14neoscroll\frequire\0",
 		"config",
-		"nvim-lspconfig"
+		"neoscroll.nvim"
 	)
-	time([[Config for nvim-lspconfig]], false)
+	time([[Config for neoscroll.nvim]], false)
 
 	-- Config for: kommentary
 	time([[Config for kommentary]], true)
@@ -525,14 +609,14 @@ local no_errors, error_msg = pcall(function()
 	)
 	time([[Config for kommentary]], false)
 
-	-- Config for: vim-rooter
-	time([[Config for vim-rooter]], true)
+	-- Config for: nvim-treesitter
+	time([[Config for nvim-treesitter]], true)
 	try_loadstring(
-		"\27LJ\1\0025\0\0\2\0\3\0\0054\0\0\0007\0\1\0'\1\1\0:\1\2\0G\0\1\0\24rooter_silent_chdir\6g\bvim\0",
+		"\27LJ\1\2;\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0 core.config.nvim-treesitter\frequire\0",
 		"config",
-		"vim-rooter"
+		"nvim-treesitter"
 	)
-	time([[Config for vim-rooter]], false)
+	time([[Config for nvim-treesitter]], false)
 
 	-- Config for: nvim-autopairs
 	time([[Config for nvim-autopairs]], true)
@@ -550,21 +634,27 @@ local no_errors, error_msg = pcall(function()
 
 	-- Load plugins in order defined by `after`
 	time([[Sequenced loading]], true)
-	vim.cmd [[ packadd nvim-jdtls ]]
-	vim.cmd [[ packadd lspsaga.nvim ]]
-	vim.cmd [[ packadd nvim-lspinstall ]]
 	vim.cmd [[ packadd spellsitter.nvim ]]
-	vim.cmd [[ packadd nvim-treesitter-textobjects ]]
 	vim.cmd [[ packadd nvim-ts-rainbow ]]
 	vim.cmd [[ packadd nvim-ts-autotag ]]
+	vim.cmd [[ packadd nvim-treesitter-textobjects ]]
+	vim.cmd [[ packadd nvim-lspinstall ]]
+	vim.cmd [[ packadd nvim-jdtls ]]
+	vim.cmd [[ packadd lspsaga.nvim ]]
 	time([[Sequenced loading]], false)
 	vim.cmd [[augroup packer_load_aucmds]]
 	vim.cmd [[au!]]
 
+	-- Filetype lazy-loads
+	time([[Defining lazy-load filetype autocommands]], true)
+	vim.cmd [[au FileType tex ++once lua require("packer.load")({'cmp-latex-symbols'}, { ft = "tex" }, _G.packer_plugins)]]
+	time([[Defining lazy-load filetype autocommands]], false)
+
 	-- Event lazy-loads
 	time([[Defining lazy-load event autocommands]], true)
-	vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'indent-blankline.nvim', 'galaxyline.nvim', 'nvim-tree.lua', 'vista.vim', 'barbar.nvim', 'which-key.nvim', 'telescope.nvim', 'vim-sayonara', 'dashboard-nvim', 'nvim-toggleterm.lua', 'nvim-transparent'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
-	vim.cmd [[au BufRead * ++once lua require("packer.load")({'hop', 'everforest', 'gitsigns.nvim', 'github-nvim-theme', 'todo-comments.nvim', 'gruvbox-material'}, { event = "BufRead *" }, _G.packer_plugins)]]
+	vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'vista.vim', 'barbar.nvim', 'vim-sayonara', 'indent-blankline.nvim', 'nvim-tree.lua', 'which-key.nvim', 'nvim-transparent', 'dashboard-nvim', 'nvim-toggleterm.lua', 'telescope.nvim', 'galaxyline.nvim'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
+	vim.cmd [[au InsertCharPre * ++once lua require("packer.load")({'cmp-vsnip', 'cmp-treesitter', 'cmp-nvim-ultisnips', 'cmp-calc', 'cmp-spell', 'cmp-nvim-tags', 'cmp-look', 'cmp-tabnine', 'vim-vsnip', 'cmp-buffer', 'cmp-path', 'cmp-emoji', 'cmp-nvim-lua'}, { event = "InsertCharPre *" }, _G.packer_plugins)]]
+	vim.cmd [[au BufRead * ++once lua require("packer.load")({'everforest', 'hop', 'gitsigns.nvim', 'gruvbox-material', 'github-nvim-theme', 'todo-comments.nvim'}, { event = "BufRead *" }, _G.packer_plugins)]]
 	time([[Defining lazy-load event autocommands]], false)
 	vim.cmd("augroup END")
 	if should_profile then
