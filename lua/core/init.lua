@@ -11,11 +11,11 @@ packer.startup(function(use)
 	use 'wbthomason/packer.nvim'
 
 	-----------NOTE:core layer-----------
-	use {
-		--Icon sets for neovim plugins and settings
-		-- 'yamatsum/nvim-nonicons',
-		-- requires = {'kyazdani42/nvim-web-devicons'}
-	}
+	-- use {
+	--Icon sets for neovim plugins and settings
+	-- 'yamatsum/nvim-nonicons',
+	-- requires = {'kyazdani42/nvim-web-devicons'}
+	-- }
 	use {
 		--vim plugin to accelerate up-down moving
 		'rhysd/accelerated-jk',
