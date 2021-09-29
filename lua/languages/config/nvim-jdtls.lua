@@ -14,6 +14,8 @@ function M.setup()
 	vim.api.nvim_command('au FileType java lua vim.api.nvim_set_keymap(\'n\', \'gd\', \'<cmd>lua vim.lsp.buf.definition()<CR>\', {silent = true})')
 	vim.api.nvim_exec(
 		[[
+  au FileType java lua vim.api.nvim_set_keymap("i", "<C-s>", "<Esc>:w! | lua require'jdtls'.organize_imports()<CR>", {noremap = true})
+  au FileType java lua vim.api.nvim_set_keymap("n", "<C-s>", ":w! | lua require'jdtls'.organize_imports()<CR>", {noremap = true})
   au FileType java lua vim.api.nvim_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', {silent=true,noremap=true})
   au FileType java lua vim.api.nvim_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', {silent=true,noremap=true})
   au FileType java lua vim.api.nvim_set_keymap('n', 'gI', '<cmd>lua vim.lsp.buf.implementation()<CR>', {silent=true,noremap=true})

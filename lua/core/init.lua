@@ -77,7 +77,11 @@ packer.startup(function(use)
 	use {
 		--highly extendable fuzzy finder over lists
 		'nvim-telescope/telescope.nvim',
-		requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},
+		requires = {
+			{'nvim-lua/popup.nvim'},
+			{'nvim-lua/plenary.nvim'},
+			{'BurntSushi/ripgrep'}
+		},
 		config = function()
 			require 'core.config.telescope'
 		end,
