@@ -156,6 +156,8 @@ wk.register({
 	["<space>gB"] = {name = "Git branchs"},
 	["<space>gS"] = {name = "Git status"},
 	["<space>gl"] = {name = "toggle line blame"},
+	["<space>g["] = {name = "previous hunk"},
+	["<space>g]"] = {name = "next hunk"},
 
 	----------------------------------
 	["<space>sb"] = {name = "search in buffer"},
