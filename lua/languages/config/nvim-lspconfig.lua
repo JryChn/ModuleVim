@@ -189,10 +189,15 @@ local function setup_servers()
 	for _, lsp in ipairs(require 'lspinstall'.installed_servers()) do
 		-- NOTE: the Java official server can not deserve requirement
 		if lsp == "java" then
-			vim.api.nvim_command('augroup nvim-jdtls')
-			vim.api.nvim_command('au!')
-			vim.api.nvim_command('au FileType java lua require(\'languages.config.nvim-jdtls\').setup()')
-			vim.api.nvim_command('augroup end')
+			vim.api.nvim_exec(
+				[[
+			augroup jdtls_lsp
+			au!
+		    au FileType java lua require('languages.config.nvim-jdtls').setup()
+            augroup end
+            ]],
+				false
+			)
 
 			-- NOTE: ----------------------------END
 		else
