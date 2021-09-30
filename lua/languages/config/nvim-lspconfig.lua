@@ -143,25 +143,33 @@ end
 -----------------------------------------------------------
 
 local lspservers = {
-	"go",
-	"lua",
-	"cpp",
-	"cmake",
+	"go:gopls",
+	"lua:sumneko_lua",
+	"cpp:clangd",
+	"cmake:cmake",
 	"java",
-	"bash",
-	"css",
-	"html",
-	"rome",
-	"json",
-	"python",
-	"rust",
-	"dockerfile",
-	"vim",
-	"vue"
+	"bash:bashls",
+	"css:cssls",
+	"html:html",
+	"rome:rome",
+	"json:jsonls",
+	"python:pyright",
+	"rust:rust_analyzer",
+	"docker:dockerls",
+	"vim:vimls",
+	"vue:vuels",
+	"yaml:yamlls",
 }
 vim.cmd ' packadd nvim-lspinstall'
+vim.cmd ' packadd nvim-lsp-installer'
 
--- NOTE: first, install the servers we need
+local function split(s, delimiter)
+	local result = {};
+	for match in (s .. delimiter):gmatch("(.-)" .. delimiter) do
+		table.insert(result, match);
+	end
+	return result;
+end
 
 local function contains(tables, value)
 	for _, values in pairs(tables) do
@@ -172,9 +180,17 @@ local function contains(tables, value)
 	return false
 end
 
+-- NOTE: first, install the servers we need
 for _, server in ipairs(lspservers) do
-	if not contains(require("lspinstall").installed_servers(), server) then
-		require("lspinstall").install_server(server)
+	local ac_server = split(server, ':');
+	if (ac_server[1] == 'java') then
+		if not contains(require("lspinstall").installed_servers(), "java") then
+			require("lspinstall").install_server("java")
+		end
+	else
+		if not require("nvim-lsp-installer.servers").is_server_installed(ac_server[2]) then
+			require("nvim-lsp-installer").install(ac_server[2])
+		end
 	end
 end
 
@@ -184,51 +200,37 @@ require 'lspinstall'.setup()
 
 -- use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local nvim_lsp = require('lspconfig')
-local function setup_servers()
-	for _, lsp in ipairs(require 'lspinstall'.installed_servers()) do
-		-- NOTE: the Java official server can not deserve requirement
-		if lsp == "java" then
-			vim.api.nvim_exec(
-				[[
+local lsp_installer = require("nvim-lsp-installer")
+
+lsp_installer.on_server_ready(function(server)
+	local opts = {
+		autostart = true,
+		on_attach = on_attach,
+		flags = {
+			debounce_text_changes = 150,
+		},
+		capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+	}
+
+	if server.name == "sumneko_lua" then
+		opts.settings = {Lua = {diagnostics = {globals = {'vim'}}}}
+	end
+	server:setup(opts)
+	vim.cmd("bufdo e")
+end)
+for _, lsp in ipairs(require 'lspinstall'.installed_servers()) do
+	-- NOTE: the Java official server can not deserve requirement
+	if lsp == "java" then
+		vim.api.nvim_exec(
+			[[
 			augroup jdtls_lsp
 			au!
 		    au FileType java lua require('languages.config.nvim-jdtls').setup()
             augroup end
             ]],
-				false
-			)
-
-			-- NOTE: ----------------------------END
-		else
-			nvim_lsp[lsp].setup {
-				on_attach = on_attach,
-				flags = {
-					debounce_text_changes = 150,
-				},
-				capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-			}
-		end
-		nvim_lsp["lua"].setup {
-			on_attach = on_attach,
-			flags = {
-				debounce_text_changes = 150,
-			},
-			capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
-			settings = {Lua = {diagnostics = {globals = {'vim'}}}}
-		}
+			false
+		)
 	end
-end
-
-setup_servers()
-
-require 'lspinstall'.post_install_hook = function()
-	setup_servers()
-
-	-- reload installed servers
-	vim.cmd("bufdo e")
-
-	-- this triggers the filetype autocmd that starts the server
 end
 
 -- NOTE: finally, setup lsp saga and config
