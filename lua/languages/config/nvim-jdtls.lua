@@ -195,7 +195,8 @@ function M.setup()
 		cmd = {path, workspace_folder},
 		root_dir = root_dir,
 		flags = {allow_incremental_sync = true},
-		on_attach = on_attach
+		on_attach = on_attach,
+		capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 	}
 
 	require('jdtls').start_or_attach(config)

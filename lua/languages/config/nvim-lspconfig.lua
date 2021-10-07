@@ -151,7 +151,6 @@ local lspservers = {
 	"bash:bashls",
 	"css:cssls",
 	"html:html",
-	"rome:rome",
 	"json:jsonls",
 	"python:pyright",
 	"rust:rust_analyzer",
@@ -159,6 +158,9 @@ local lspservers = {
 	"vim:vimls",
 	"vue:vuels",
 	"yaml:yamlls",
+	"xml:lemminx",
+	"emmet:emmet_ls",
+	"typescript:tsserver",
 }
 vim.cmd ' packadd nvim-lspinstall'
 vim.cmd ' packadd nvim-lsp-installer'
@@ -214,6 +216,15 @@ lsp_installer.on_server_ready(function(server)
 
 	if server.name == "sumneko_lua" then
 		opts.settings = {Lua = {diagnostics = {globals = {'vim'}}}}
+	end
+	if server.name == "tsserver" then
+		opts.root_dir = function(fname)
+			return require 'lspconfig/util'.root_pattern(
+				"package.json",
+				"tsconfig.json",
+				".git"
+			)(fname) or vim.loop.cwd()
+		end
 	end
 	server:setup(opts)
 	vim.cmd("bufdo e")
