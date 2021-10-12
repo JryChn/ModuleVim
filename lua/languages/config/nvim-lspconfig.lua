@@ -160,7 +160,8 @@ local lspservers = {
 	"yaml:yamlls",
 	"xml:lemminx",
 	"emmet:emmet_ls",
-	"typescript:tsserver",
+
+	-- "typescript:tsserver",
 }
 vim.cmd ' packadd nvim-lsp-installer'
 
@@ -209,6 +210,16 @@ lsp_installer.on_server_ready(function(server)
 		opts.settings = {Lua = {diagnostics = {globals = {'vim'}}}}
 	end
 	if server.name == "tsserver" then
+		vim.cmd ' packadd null-ls.nvim'
+		require("null-ls").config {}
+		require("lspconfig")["null-ls"].setup {}
+		if vim.fn.executable('npm') ~= 1 then
+			print("npm was not found" .. "\n")
+		else
+			if vim.fn.executable('eslint_d') ~= 1 then
+				os.execute('sudo npm install -g eslint_d')
+			end
+		end
 		opts.root_dir = function(fname)
 			return require 'lspconfig/util'.root_pattern(
 				"package.json",
@@ -216,7 +227,9 @@ lsp_installer.on_server_ready(function(server)
 				".git"
 			)(fname) or vim.loop.cwd()
 		end
+		opts.on_attach = require('languages.config.server.typescript.tsserver').setup(on_attach)
 	end
+
 	if server.name == "jdtls" then
 		goto
 		continue
@@ -228,7 +241,7 @@ vim.api.nvim_exec(
 	[[
 			augroup jdtls_lsp
 			au!
-		    au FileType java lua require('languages.config.nvim-jdtls').setup()
+		    au FileType java lua require('languages.config.server.java.nvim-jdtls').setup()
             augroup end
             ]],
 	false

@@ -165,6 +165,8 @@ packer.startup(function(use)
 			{'williamboman/nvim-lsp-installer', after = 'nvim-lspconfig'},
 			{'glepnir/lspsaga.nvim', after = 'nvim-lspconfig'},
 			{'mfussenegger/nvim-jdtls', after = 'nvim-lspconfig'},
+			{'jose-elias-alvarez/nvim-lsp-ts-utils', after = 'nvim-lspconfig'},
+			{'jose-elias-alvarez/null-ls.nvim', after = 'nvim-lspconfig'},
 		},
 		config = function()
 			require 'languages.config.nvim-lspconfig'
