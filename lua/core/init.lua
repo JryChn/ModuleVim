@@ -80,7 +80,6 @@ packer.startup(function(use)
 		requires = {
 			{'nvim-lua/popup.nvim'},
 			{'nvim-lua/plenary.nvim'},
-			{'BurntSushi/ripgrep'}
 		},
 		config = function()
 			require 'core.config.telescope'
