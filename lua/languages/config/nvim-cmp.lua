@@ -1,3 +1,4 @@
+local cmp = require('cmp')
 local has_words_before = function()
 	if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then
 		return false
@@ -17,51 +18,24 @@ local feedkey = function(key, mode)
 	)
 end
 local tab_complete = function(fallback)
-	if vim.fn.pumvisible() == 1 then
-		vim.api.nvim_feedkeys(
-			vim.api.nvim_replace_termcodes("<C-n>", true, true, true),
-			"n",
-			true
-		)
-	elseif has_words_before() and vim.fn["vsnip#available"]() == 1 then
-		vim.api.nvim_feedkeys(
-			vim.api.nvim_replace_termcodes(
-				"<Plug>(vsnip-expand-or-jump)",
-				true,
-				true,
-				true
-			),
-			"",
-			true
-		)
+	if cmp.visible() then
+		cmp.select_next_item()
+	elseif vim.fn["vsnip#available"]() == 1 then
+		feedkey("<Plug>(vsnip-expand-or-jump)", "")
+	elseif has_words_before() then
+		cmp.complete()
 	else
 		fallback()
 	end
 end
 local s_tab_complete = function(fallback)
-	if vim.fn.pumvisible() == 1 then
-		vim.api.nvim_feedkeys(
-			vim.api.nvim_replace_termcodes("<C-p>", true, true, true),
-			"n",
-			true
-		)
-	elseif has_words_before() and vim.fn["vsnip#available"]() == 1 then
-		vim.api.nvim_feedkeys(
-			vim.api.nvim_replace_termcodes(
-				"<Plug>(vsnip-jump-prev)",
-				true,
-				true,
-				true
-			),
-			"",
-			true
-		)
-	else
-		fallback()
+	if cmp.visible() then
+		cmp.select_prev_item()
+	elseif vim.fn["vsnip#jumpable"](-1) == 1 then
+		feedkey("<Plug>(vsnip-jump-prev)", "")
 	end
 end
 
-local cmp = require('cmp')
 cmp.setup {
 	snippet = {
 		expand = function(args)
@@ -69,14 +43,14 @@ cmp.setup {
 		end
 	},
 	mapping = {
-		["<Tab>"] = tab_complete,
-		["<C-j>"] = tab_complete,
-		["<S-Tab>"] = s_tab_complete,
+		["<Tab>"] = cmp.mapping(tab_complete, {"i", "s"}),
+		["<C-j>"] = cmp.mapping(tab_complete, {"i", "s"}),
+		["<S-Tab>"] = cmp.mapping(s_tab_complete, {"i", "s"}),
 		["<CR>"] = cmp.mapping.confirm {
-			behavior = cmp.ConfirmBehavior.Replace,
+			behavior = cmp.ConfirmBehavior.Insert,
 			select = false
 		},
-		["<C-k>"] = s_tab_complete
+		["<C-k>"] = cmp.mapping(s_tab_complete, {"i", "s"})
 	},
 	formatting = {
 		format = function(entry, vim_item)
