@@ -147,7 +147,7 @@ local lspservers = {
 	"lua:sumneko_lua",
 	"cpp:clangd",
 	"cmake:cmake",
-	"java",
+	"java:jdtls",
 	"bash:bashls",
 	"css:cssls",
 	"html:html",
@@ -162,7 +162,6 @@ local lspservers = {
 	"emmet:emmet_ls",
 	"typescript:tsserver",
 }
-vim.cmd ' packadd nvim-lspinstall'
 vim.cmd ' packadd nvim-lsp-installer'
 
 local function split(s, delimiter)
@@ -185,20 +184,12 @@ end
 -- NOTE: first, install the servers we need
 for _, server in ipairs(lspservers) do
 	local ac_server = split(server, ':');
-	if (ac_server[1] == 'java') then
-		if not contains(require("lspinstall").installed_servers(), "java") then
-			require("lspinstall").install_server("java")
-		end
-	else
-		if not require("nvim-lsp-installer.servers").is_server_installed(ac_server[2]) then
-			require("nvim-lsp-installer").install(ac_server[2])
-		end
+	if not require("nvim-lsp-installer.servers").is_server_installed(ac_server[2]) then
+		require("nvim-lsp-installer").install(ac_server[2])
 	end
 end
 
 -- NOTE: then, we should setup the servers
-
-require 'lspinstall'.setup()
 
 -- use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
@@ -226,23 +217,22 @@ lsp_installer.on_server_ready(function(server)
 			)(fname) or vim.loop.cwd()
 		end
 	end
+	if server.name == "jdtls" then
+		goto
+		continue
+	end
 	server:setup(opts)
-	vim.cmd("bufdo e")
+	vim.cmd("bufdo e")::continue::
 end)
-for _, lsp in ipairs(require 'lspinstall'.installed_servers()) do
-	-- NOTE: the Java official server can not deserve requirement
-	if lsp == "java" then
-		vim.api.nvim_exec(
-			[[
+vim.api.nvim_exec(
+	[[
 			augroup jdtls_lsp
 			au!
 		    au FileType java lua require('languages.config.nvim-jdtls').setup()
             augroup end
             ]],
-			false
-		)
-	end
-end
+	false
+)
 
 -- NOTE: finally, setup lsp saga and config
 vim.cmd ' packadd lspsaga.nvim'

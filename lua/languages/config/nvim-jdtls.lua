@@ -177,22 +177,27 @@ function M.setup()
 		}):find()
 	end
 
-	local install_path = require "lspinstall/util".install_path("java")
-	local path = install_path .. "/jdtls.sh"
 	local root_markers = {'gradlew', 'pom.xml', '.git'}
 	local root_dir = require('jdtls.setup').find_root(root_markers)
 	local workspace_folder = os.getenv("HOME") .. "/.local/share/nvim_java_workspace/" .. vim.fn.fnamemodify(
 		root_dir,
 		":p:h:t"
 	)
-	print("detect root directory " .. workspace_folder)
+	vim.env.WORKSPACE = workspace_folder
+	local ok, install_cmd = require 'nvim-lsp-installer.servers'.get_server("jdtls")
+	if ok then
+		print(ok)
+		if not install_cmd:is_installed() then
+			install_cmd:install()
+		end
+	end
 	local on_attach = function(client, bufnr)
 		require 'jdtls'.setup_dap()
 		require 'lsp-status'.register_progress()
 	end
 
 	local config = {
-		cmd = {path, workspace_folder},
+		cmd = install_cmd:get_default_options().cmd,
 		root_dir = root_dir,
 		flags = {allow_incremental_sync = true},
 		on_attach = on_attach,
