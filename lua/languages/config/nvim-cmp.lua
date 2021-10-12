@@ -18,10 +18,10 @@ local feedkey = function(key, mode)
 	)
 end
 local tab_complete = function(fallback)
-	if cmp.visible() then
-		cmp.select_next_item()
-	elseif vim.fn["vsnip#available"]() == 1 then
+	if vim.fn["vsnip#available"]() == 1 then
 		feedkey("<Plug>(vsnip-expand-or-jump)", "")
+	elseif cmp.visible() then
+		cmp.select_next_item()
 	elseif has_words_before() then
 		cmp.complete()
 	else
@@ -29,10 +29,12 @@ local tab_complete = function(fallback)
 	end
 end
 local s_tab_complete = function(fallback)
-	if cmp.visible() then
-		cmp.select_prev_item()
-	elseif vim.fn["vsnip#jumpable"](-1) == 1 then
+	if vim.fn["vsnip#jumpable"](-1) == 1 then
 		feedkey("<Plug>(vsnip-jump-prev)", "")
+	elseif cmp.visible() then
+		cmp.select_prev_item()
+	else
+		fallback()
 	end
 end
 
