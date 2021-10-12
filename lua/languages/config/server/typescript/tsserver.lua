@@ -65,22 +65,29 @@ M.setup = function(on_attach)
 		vim.api.nvim_buf_set_keymap(
 			bufnr,
 			"n",
-			"gs",
+			"<space>ls",
 			":TSLspOrganize<CR>",
 			opts
 		)
 		vim.api.nvim_buf_set_keymap(
 			bufnr,
 			"n",
-			"gr",
+			"<space>lR",
 			":TSLspRenameFile<CR>",
 			opts
 		)
 		vim.api.nvim_buf_set_keymap(
 			bufnr,
 			"n",
-			"gi",
+			"<space>li",
 			":TSLspImportAll<CR>",
+			opts
+		)
+		vim.api.nvim_buf_set_keymap(
+			bufnr,
+			"n",
+			"<space>lq",
+			":TSLspFixCurrent<CR>",
 			opts
 		)
 		on_attach(client, bufnr)

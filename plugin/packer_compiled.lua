@@ -330,6 +330,7 @@ local no_errors, error_msg = pcall(function()
 				"cmp-vsnip",
 				"cmp-treesitter",
 				"cmp-nvim-lua",
+				"cmp-emoji",
 				"cmp-latex-symbols",
 				"cmp-nvim-ultisnips",
 				"cmp-calc",
@@ -338,8 +339,7 @@ local no_errors, error_msg = pcall(function()
 				"cmp-look",
 				"cmp-tabnine",
 				"cmp-path",
-				"cmp-buffer",
-				"cmp-emoji"
+				"cmp-buffer"
 			},
 			loaded = true,
 			only_config = true
@@ -425,10 +425,11 @@ local no_errors, error_msg = pcall(function()
 		},
 		["nvim-treesitter"] = {
 			after = {
+				"nvim-ts-context-commentstring",
 				"spellsitter.nvim",
-				"nvim-ts-rainbow",
+				"nvim-treesitter-textobjects",
 				"nvim-ts-autotag",
-				"nvim-treesitter-textobjects"
+				"nvim-ts-rainbow"
 			},
 			loaded = true,
 			only_config = true
@@ -444,6 +445,12 @@ local no_errors, error_msg = pcall(function()
 			loaded = true,
 			needs_bufread = false,
 			path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/nvim-ts-autotag"
+		},
+		["nvim-ts-context-commentstring"] = {
+			load_after = {},
+			loaded = true,
+			needs_bufread = false,
+			path = "/home/jeremy/.local/share/nvim/site/pack/packer/opt/nvim-ts-context-commentstring"
 		},
 		["nvim-ts-rainbow"] = {
 			load_after = {},
@@ -652,14 +659,15 @@ local no_errors, error_msg = pcall(function()
 
 	-- Load plugins in order defined by `after`
 	time([[Sequenced loading]], true)
-	vim.cmd [[ packadd nvim-treesitter-textobjects ]]
-	vim.cmd [[ packadd spellsitter.nvim ]]
-	vim.cmd [[ packadd nvim-ts-rainbow ]]
 	vim.cmd [[ packadd nvim-ts-autotag ]]
-	vim.cmd [[ packadd nvim-lsp-installer ]]
+	vim.cmd [[ packadd spellsitter.nvim ]]
+	vim.cmd [[ packadd nvim-ts-context-commentstring ]]
+	vim.cmd [[ packadd nvim-ts-rainbow ]]
+	vim.cmd [[ packadd nvim-treesitter-textobjects ]]
 	vim.cmd [[ packadd null-ls.nvim ]]
-	vim.cmd [[ packadd nvim-jdtls ]]
 	vim.cmd [[ packadd nvim-lsp-ts-utils ]]
+	vim.cmd [[ packadd nvim-jdtls ]]
+	vim.cmd [[ packadd nvim-lsp-installer ]]
 	vim.cmd [[ packadd lspsaga.nvim ]]
 	time([[Sequenced loading]], false)
 	vim.cmd [[augroup packer_load_aucmds]]
@@ -672,8 +680,8 @@ local no_errors, error_msg = pcall(function()
 
 	-- Event lazy-loads
 	time([[Defining lazy-load event autocommands]], true)
-	vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'galaxyline.nvim', 'vista.vim', 'vim-sayonara', 'indent-blankline.nvim', 'nvim-tree.lua', 'which-key.nvim', 'dashboard-nvim', 'nvim-transparent', 'barbar.nvim', 'nvim-toggleterm.lua', 'telescope.nvim'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
-	vim.cmd [[au InsertCharPre * ++once lua require("packer.load")({'cmp-vsnip', 'cmp-treesitter', 'cmp-nvim-lua', 'cmp-nvim-ultisnips', 'cmp-calc', 'cmp-spell', 'cmp-nvim-tags', 'cmp-look', 'cmp-tabnine', 'vim-vsnip', 'cmp-path', 'cmp-buffer', 'cmp-emoji'}, { event = "InsertCharPre *" }, _G.packer_plugins)]]
+	vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'galaxyline.nvim', 'barbar.nvim', 'vim-sayonara', 'indent-blankline.nvim', 'nvim-tree.lua', 'which-key.nvim', 'nvim-toggleterm.lua', 'dashboard-nvim', 'nvim-transparent', 'vista.vim', 'telescope.nvim'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
+	vim.cmd [[au InsertCharPre * ++once lua require("packer.load")({'cmp-vsnip', 'cmp-treesitter', 'cmp-nvim-lua', 'cmp-emoji', 'cmp-nvim-ultisnips', 'cmp-calc', 'cmp-spell', 'cmp-nvim-tags', 'cmp-look', 'cmp-tabnine', 'vim-vsnip', 'cmp-path', 'cmp-buffer'}, { event = "InsertCharPre *" }, _G.packer_plugins)]]
 	vim.cmd [[au BufRead * ++once lua require("packer.load")({'hop', 'gitsigns.nvim', 'everforest', 'gruvbox-material', 'github-nvim-theme', 'todo-comments.nvim'}, { event = "BufRead *" }, _G.packer_plugins)]]
 	time([[Defining lazy-load event autocommands]], false)
 	vim.cmd("augroup END")

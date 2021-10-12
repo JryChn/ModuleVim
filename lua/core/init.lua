@@ -149,7 +149,11 @@ packer.startup(function(use)
 			},
 			{'p00f/nvim-ts-rainbow', after = 'nvim-treesitter'},
 			{'lewis6991/spellsitter.nvim', after = 'nvim-treesitter'},
-			{'windwp/nvim-ts-autotag', after = 'nvim-treesitter'}
+			{'windwp/nvim-ts-autotag', after = 'nvim-treesitter'},
+			{
+				'JoosepAlviste/nvim-ts-context-commentstring',
+				after = 'nvim-treesitter'
+			}
 		},
 		config = function()
 			require 'core.config.nvim-treesitter'
@@ -163,7 +167,7 @@ packer.startup(function(use)
 		'neovim/nvim-lspconfig',
 		requires = {
 			{'williamboman/nvim-lsp-installer', after = 'nvim-lspconfig'},
-			{'glepnir/lspsaga.nvim', after = 'nvim-lspconfig'},
+			{'tami5/lspsaga.nvim', after = 'nvim-lspconfig'},
 			{'mfussenegger/nvim-jdtls', after = 'nvim-lspconfig'},
 			{'jose-elias-alvarez/nvim-lsp-ts-utils', after = 'nvim-lspconfig'},
 			{'jose-elias-alvarez/null-ls.nvim', after = 'nvim-lspconfig'},
