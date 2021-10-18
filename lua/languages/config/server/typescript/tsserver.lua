@@ -44,7 +44,7 @@ M.setup = function(on_attach)
 
 			-- formatting
 			enable_formatting = true,
-			formatter = "eslint_d",
+			formatter = "prettier",
 			formatter_opts = {},
 
 			-- update imports on file move

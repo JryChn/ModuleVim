@@ -219,6 +219,9 @@ lsp_installer.on_server_ready(function(server)
 			if vim.fn.executable('eslint_d') ~= 1 then
 				os.execute('sudo npm install -g eslint_d')
 			end
+			if vim.fn.executable('prettier') ~= 1 then
+				os.execute('sudo npm install -g prettier')
+			end
 		end
 		opts.root_dir = function(fname)
 			return require 'lspconfig/util'.root_pattern(
