@@ -107,7 +107,10 @@ packer.startup(function(use)
 		--light-weight and super fast stataus line plugin
 		'glepnir/galaxyline.nvim',
 		branch = 'main',
-		requires = {'kyazdani42/nvim-web-devicons'},
+		requires = {
+			{'kyazdani42/nvim-web-devicons'},
+			{"SmiteshP/nvim-gps"},
+		},
 		config = function()
 			require 'core.config.galaxyline'
 		end,

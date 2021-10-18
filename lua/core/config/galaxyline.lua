@@ -1,5 +1,6 @@
 local gl = require("galaxyline")
 local gls = gl.section
+require 'nvim-gps'.setup()
 
 gl.short_line_list = {"NvimTree", "vista", "toggleterm"}
 
@@ -55,6 +56,17 @@ gls.left[4] = {
 }
 
 gls.left[5] = {
+	nvimGPS = {
+		provider = function()
+			return require('nvim-gps').get_location()
+		end,
+		condition = function()
+			return require('nvim-gps').is_available()
+		end
+	}
+}
+
+gls.left[6] = {
 	teech = {
 		provider = function()
 			return ""
@@ -72,7 +84,7 @@ local checkwidth = function()
 	return false
 end
 
-gls.left[6] = {
+gls.left[7] = {
 	DiffAdd = {
 		provider = "DiffAdd",
 		condition = checkwidth,
@@ -81,7 +93,7 @@ gls.left[6] = {
 	}
 }
 
-gls.left[7] = {
+gls.left[8] = {
 	DiffModified = {
 		provider = "DiffModified",
 		condition = checkwidth,
@@ -90,7 +102,7 @@ gls.left[7] = {
 	}
 }
 
-gls.left[8] = {
+gls.left[9] = {
 	DiffRemove = {
 		provider = "DiffRemove",
 		condition = checkwidth,
@@ -99,7 +111,7 @@ gls.left[8] = {
 	}
 }
 
-gls.left[9] = {
+gls.left[10] = {
 	LeftEnd = {
 		provider = function()
 			return " "
@@ -110,7 +122,7 @@ gls.left[9] = {
 	}
 }
 
-gls.left[10] = {
+gls.left[11] = {
 	DiagnosticError = {
 		provider = "DiagnosticError",
 		icon = "  ",
@@ -118,7 +130,7 @@ gls.left[10] = {
 	}
 }
 
-gls.left[11] = {
+gls.left[12] = {
 	Space = {
 		provider = function()
 			return " "
@@ -127,7 +139,7 @@ gls.left[11] = {
 	}
 }
 
-gls.left[12] = {
+gls.left[13] = {
 	DiagnosticWarn = {
 		provider = "DiagnosticWarn",
 		icon = "  ",
