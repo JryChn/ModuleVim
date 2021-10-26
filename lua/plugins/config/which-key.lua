@@ -169,6 +169,9 @@ wk.register({
 	["<space>tc1"] = {name = "change to github style"},
 	["<space>tc2"] = {name = "change to gruvbox-material"},
 	["<space>tc3"] = {name = "change to everforest"},
+	["<space>tc4"] = {name = "change to onebuddy"},
+	["<space>tc5"] = {name = "change to gruvbuddy"},
+	["<space>tc6"] = {name = "change to edge"},
 
 	----------------------------------
 	["<space>jw"] = {name = "jump to word"},

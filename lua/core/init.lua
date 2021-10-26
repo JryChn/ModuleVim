@@ -267,46 +267,22 @@ packer.startup(function(use)
 	use {
 		'projekt0n/github-nvim-theme',
 		config = function()
-			vim.cmd("hi VirtualTextWarning guifg='yellow'")
-			vim.cmd("hi VirtualTextError guifg='red'")
-			vim.cmd("hi VirtualTextInfo guifg='#0db9d7'")
-			vim.cmd("hi VirtualTextHint guifg='#2c6e4e'")
-			vim.cmd("hi ErrorText cterm=underline gui=undercurl guisp=red")
-			vim.cmd("hi WarningText cterm=underline gui=undercurl guisp=yellow")
-			vim.cmd("hi HintText cterm=underline gui=undercurl guisp=#2c6e4e")
-			vim.cmd("hi InformationText cterm=underline gui=undercurl guisp=#0db9d7")
-			vim.cmd("hi CursorWord0 ctermbg=239 guibg=#3d3c3b")
-			vim.cmd("hi SpellBad cterm=underline gui=undercurl guisp=None")
 			vim.api.nvim_set_keymap(
 				'n',
 				'<space>tc1',
-				"<cmd>lua require'github-theme'.setup()<cr>",
+				"<cmd>colorscheme github_dark<cr>",
 				{silent = true}
 			)
 		end,
-		event = "BufRead"
 	}
 	use {
 		'sainnhe/gruvbox-material',
 		config = function()
 			-- vim.g.gruvbox_material_transparent_background = 1
-			vim.g.gruvbox_material_background = 'medium'
+			vim.g.gruvbox_material_background = 'soft'
+			vim.g.gruvbox_material_enable_italic = 1
+			vim.g.gruvbox_material_disable_italic_comment = 1
 			vim.g.gruvbox_material_palette = 'mix'
-			vim.cmd("colorscheme gruvbox-material")
-			vim.api.nvim_command('highlight default HopNextKey  guifg=#ff007c gui=bold ctermfg=198 cterm=bold')
-			vim.api.nvim_command('highlight default HopNextKey1 guifg=#00dfff gui=bold ctermfg=45 cterm=bold')
-			vim.api.nvim_command('highlight default HopNextKey2 guifg=#2b8db3 ctermfg=33')
-			vim.api.nvim_command('highlight default HopUnmatched guifg=#666666 ctermfg=242')
-			vim.cmd("hi VirtualTextWarning guifg='yellow'")
-			vim.cmd("hi VirtualTextError guifg='red'")
-			vim.cmd("hi VirtualTextInfo guifg='#0db9d7'")
-			vim.cmd("hi VirtualTextHint guifg='#2c6e4e'")
-			vim.cmd("hi ErrorText cterm=underline gui=undercurl guisp=red")
-			vim.cmd("hi WarningText cterm=underline gui=undercurl guisp=yellow")
-			vim.cmd("hi HintText cterm=underline gui=undercurl guisp=#2c6e4e")
-			vim.cmd("hi InformationText cterm=underline gui=undercurl guisp=#0db9d7")
-			vim.cmd("hi CursorWord0 ctermbg=239 guibg=#3d3c3b")
-			vim.cmd("hi SpellBad cterm=underline gui=undercurl guisp=None")
 			vim.api.nvim_set_keymap(
 				'n',
 				'<space>tc2',
@@ -314,22 +290,11 @@ packer.startup(function(use)
 				{silent = true}
 			)
 		end,
-		event = "BufRead"
 	}
 	use {
 		'sainnhe/everforest',
 		requires = {"sainnhe/sonokai", "Th3Whit3Wolf/space-nvim"},
 		config = function()
-			vim.cmd("hi VirtualTextWarning guifg='yellow'")
-			vim.cmd("hi VirtualTextError guifg='red'")
-			vim.cmd("hi VirtualTextInfo guifg='#0db9d7'")
-			vim.cmd("hi VirtualTextHint guifg='#2c6e4e'")
-			vim.cmd("hi ErrorText cterm=underline gui=undercurl guisp=red")
-			vim.cmd("hi WarningText cterm=underline gui=undercurl guisp=yellow")
-			vim.cmd("hi HintText cterm=underline gui=undercurl guisp=#2c6e4e")
-			vim.cmd("hi InformationText cterm=underline gui=undercurl guisp=#0db9d7")
-			vim.cmd("hi CursorWord0 ctermbg=239 guibg=#3d3c3b")
-			vim.cmd("hi SpellBad cterm=underline gui=undercurl guisp=None")
 			vim.api.nvim_set_keymap(
 				'n',
 				'<space>tc3',
@@ -337,7 +302,44 @@ packer.startup(function(use)
 				{silent = true}
 			)
 		end,
-		event = "BufRead"
+	}
+	use {
+		'tjdevries/colorbuddy.vim',
+		requires = {
+			{
+				'Th3Whit3Wolf/onebuddy',
+				config = function()
+					vim.api.nvim_set_keymap(
+						'n',
+						'<space>tc4',
+						"<cmd>lua require'colorbuddy'.colorscheme('onebuddy')<cr>",
+						{silent = true}
+					)
+				end
+			},
+			{
+				'tjdevries/gruvbuddy.nvim',
+				config = function()
+					vim.api.nvim_set_keymap(
+						'n',
+						'<space>tc5',
+						"<cmd>lua require'colorbuddy'.colorscheme('gruvbuddy')<cr>",
+						{silent = true}
+					)
+				end
+			},
+			{
+				'sainnhe/edge',
+				config = function()
+					vim.api.nvim_set_keymap(
+						'n',
+						'<space>tc6',
+						"<cmd>colorscheme edge<cr>",
+						{silent = true}
+					)
+				end
+			},
+		}
 	}
 
 	--------------------------------
@@ -428,6 +430,7 @@ packer.startup(function(use)
 	--------------------------------
 end)
 require 'packer'.install()
+vim.cmd("colorscheme gruvbox-material")
 
 -------------------------------------------------------------
 

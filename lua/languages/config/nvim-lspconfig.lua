@@ -257,7 +257,7 @@ saga.init_lsp_saga {
 	use_saga_diagnostic_sign = true,
 	error_sign = '❌',
 	warn_sign = '⚠️ ',
-	hint_sign = '🌱',
+	hint_sign = '🌵',
 	infor_sign = 'ℹ️',
 	diagnostic_header_icon = '🐞',
 	code_action_icon = '💡'
@@ -265,7 +265,6 @@ saga.init_lsp_saga {
 
 -------------------------------
 --NOTE: define the diagnostic color
-
 vim.cmd("hi VirtualTextWarning guifg='yellow'")
 vim.cmd("hi VirtualTextError guifg='red'")
 vim.cmd("hi VirtualTextInfo guifg='#0db9d7'")
