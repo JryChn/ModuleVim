@@ -283,6 +283,7 @@ packer.startup(function(use)
 			vim.g.gruvbox_material_enable_italic = 1
 			vim.g.gruvbox_material_disable_italic_comment = 1
 			vim.g.gruvbox_material_palette = 'mix'
+			vim.g.gruvbox_material_diagnostic_virtual_text = 'colored'
 			vim.api.nvim_set_keymap(
 				'n',
 				'<space>tc2',
@@ -295,6 +296,7 @@ packer.startup(function(use)
 		'sainnhe/everforest',
 		requires = {"sainnhe/sonokai", "Th3Whit3Wolf/space-nvim"},
 		config = function()
+			vim.g.everforest_diagnostic_virtual_text = 'colored'
 			vim.api.nvim_set_keymap(
 				'n',
 				'<space>tc3',
@@ -331,7 +333,7 @@ packer.startup(function(use)
 			{
 				'sainnhe/edge',
 				config = function()
-					vim.api.nvim_set_keymap(
+					vim.g.edge_diagnostic_virtual_text = 'colored', vim.api.nvim_set_keymap(
 						'n',
 						'<space>tc6',
 						"<cmd>colorscheme edge<cr>",
