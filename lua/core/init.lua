@@ -284,6 +284,7 @@ packer.startup(function(use)
 			vim.g.gruvbox_material_disable_italic_comment = 1
 			vim.g.gruvbox_material_palette = 'mix'
 			vim.g.gruvbox_material_diagnostic_virtual_text = 'colored'
+			vim.cmd("colorscheme gruvbox-material")
 			vim.api.nvim_set_keymap(
 				'n',
 				'<space>tc2',

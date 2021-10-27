@@ -265,7 +265,7 @@ saga.init_lsp_saga {
 
 -------------------------------
 --NOTE: define the diagnostic color
-vim.cmd("hi VirtualTextWarning guifg='yellow'")
+--[[ vim.cmd("hi VirtualTextWarning guifg='yellow'")
 vim.cmd("hi VirtualTextError guifg='red'")
 vim.cmd("hi VirtualTextInfo guifg='#0db9d7'")
 vim.cmd("hi VirtualTextHint guifg=#2c6e4e")
@@ -274,7 +274,7 @@ vim.cmd("hi WarningText cterm=underline gui=undercurl guisp=yellow")
 vim.cmd("hi HintText cterm=underline gui=undercurl guisp=#2c6e4e")
 vim.cmd("hi InformationText cterm=underline gui=undercurl guisp=#0db9d7")
 vim.cmd("hi CursorWord0 ctermbg=239 guibg=#3d3c3b")
-vim.cmd("hi SpellBad cterm=underline gui=undercurl guisp=None")
+vim.cmd("hi SpellBad cterm=underline gui=undercurl guisp=None") ]]
 
 --NOTE: define the auto format on save
 vim.api.nvim_exec(
