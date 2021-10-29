@@ -9,3 +9,4 @@ vim.g.vista_executive_for = {
 	vimwiki = "markdown",
 	pandoc = "markdown",
 }
+vim.cmd([[autocmd bufenter * if winnr("$") == 1 && vista#sidebar#IsOpen() | execute "normal! :q!\<CR>" | endif]])

@@ -68,6 +68,8 @@ local g = vim.g
 
 vim.o.termguicolors = true
 
+g.nvim_tree_disable_window_picker = 1
+
 g.nvim_tree_root_folder_modifier = ":t"
 
 g.nvim_tree_show_icons = {git = 1, folders = 1, files = 1}

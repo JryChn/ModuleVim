@@ -2,7 +2,7 @@ local gl = require("galaxyline")
 local gls = gl.section
 require 'nvim-gps'.setup()
 
-gl.short_line_list = {"NvimTree", "vista", "toggleterm"}
+gl.short_line_list = {"NvimTree", "vista_kind", "toggleterm"}
 
 local colors = {
 	bg = "#1e222a",

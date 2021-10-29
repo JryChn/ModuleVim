@@ -36,13 +36,14 @@ packer.startup(function(use)
 		config = function()
 		end
 	}
-	use {
+
+	--[[ use { TODO: not use it to improve performance
 		--a smooth scrolling neovim plugin written in lua
 		'karb94/neoscroll.nvim',
 		config = function()
 			require 'neoscroll'.setup()
 		end
-	}
+	} ]]
 	use {
 		--provide a single command that deletes the current buffer
 		'mhinz/vim-sayonara',
