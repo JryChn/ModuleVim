@@ -71,3 +71,6 @@ vim.api.nvim_set_keymap('n', '<space>lq', '<cmd>Telescope quickfix<CR>', {
 	noremap = true,
 	silent = true
 })
+require('telescope').setup {
+	defaults = {mappings = {n = {["q"] = require "telescope.actions".close}}}
+}

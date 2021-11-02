@@ -40,7 +40,7 @@ for debugger, _ in pairs(dbg_list) do
 end
 
 -- ui
-vim.g.dap_virtual_text = 'all frames'
+require("nvim-dap-virtual-text").setup()
 local dap, dapui = require('dap'), require('dapui')
 dap.listeners.after.event_initialized['dapui_config'] = function()
 	dapui.open()
