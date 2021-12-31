@@ -7,6 +7,9 @@ local use = packer.use
 packer.reset()
 
 -----------------------start to loading plugins--------------
+packer.init({
+  max_jobs=4
+})
 packer.startup(function(use)
 	use 'wbthomason/packer.nvim'
 
@@ -106,7 +109,7 @@ packer.startup(function(use)
 	}
 	use {
 		--light-weight and super fast stataus line plugin
-		'glepnir/galaxyline.nvim',
+		'NTBBloodbath/galaxyline.nvim',
 		branch = 'main',
 		requires = {
 			{'kyazdani42/nvim-web-devicons'},

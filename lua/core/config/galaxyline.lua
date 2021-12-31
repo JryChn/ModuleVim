@@ -47,7 +47,7 @@ gls.left[3] = {
 		provider = "FileIcon",
 		condition = buffer_not_empty,
 		highlight = {
-			require("galaxyline.provider_fileinfo").get_file_icon_color,
+			require("galaxyline.providers.fileinfo").get_file_icon_color,
 			colors.lightbg
 		}
 	}
@@ -169,7 +169,7 @@ gls.right[2] = {
 gls.right[3] = {
 	ShowLspClient = {
 		provider = function()
-			if require('galaxyline.provider_lsp').get_lsp_client() == 'No Active Lsp' then
+			if require('galaxyline.providers.lsp').get_lsp_client() == 'No Active Lsp' then
 				return "  "
 			end
 			return "  "
@@ -183,7 +183,7 @@ gls.right[3] = {
 		end,
 		highlight = {
 			function()
-				if require('galaxyline.provider_lsp').get_lsp_client() == 'No Active Lsp' then
+				if require('galaxyline.providers.lsp').get_lsp_client() == 'No Active Lsp' then
 					return colors.red
 				else
 					return colors.green
@@ -205,7 +205,7 @@ gls.right[4] = {
 gls.right[5] = {
 	GitBranch = {
 		provider = "GitBranch",
-		condition = require("galaxyline.provider_vcs").check_git_workspace,
+		condition = require("galaxyline.providers.vcs").check_git_workspace,
 		icon = "  ",
 		highlight = {colors.green, colors.line_bg}
 	}
