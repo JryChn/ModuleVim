@@ -76,7 +76,7 @@ function M.setup()
 	vim.api.nvim_set_keymap(
 		'n',
 		'<space>la',
-		'<cmd>lua require"jdtls".code_action()<CR>',
+		'<cmd>lua require"telescope.builtin".lsp_code_actions()<CR>',
 		{silent = true, noremap = true}
 	)
 	vim.api.nvim_set_keymap(
@@ -151,7 +151,7 @@ function M.setup()
 	require "which-key".register({["<space>lcv"] = {name = "extract_variable"}})
 	require "which-key".register({["<space>lcc"] = {name = "extract_constant"}})
 	require "which-key".register({["<space>lcm"] = {name = "extract_method"}})
-	require('jdtls.ui').pick_one_async = function(items, prompt, label_fn, cb)
+	--[[ require('jdtls.ui').pick_one_async = function(items, prompt, label_fn, cb)
 		local opts = {};
 		require 'telescope.pickers'.new(opts, {
 			prompt_title = prompt,
@@ -175,7 +175,7 @@ function M.setup()
 				return true
 			end,
 		}):find()
-	end
+	end ]]
 
 	local root_markers = {'gradlew', 'pom.xml', '.git'}
 	local root_dir = require('jdtls.setup').find_root(root_markers)
