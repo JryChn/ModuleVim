@@ -151,6 +151,7 @@ function M.setup()
 	require "which-key".register({["<space>lcv"] = {name = "extract_variable"}})
 	require "which-key".register({["<space>lcc"] = {name = "extract_constant"}})
 	require "which-key".register({["<space>lcm"] = {name = "extract_method"}})
+
 	--[[ require('jdtls.ui').pick_one_async = function(items, prompt, label_fn, cb)
 		local opts = {};
 		require 'telescope.pickers'.new(opts, {

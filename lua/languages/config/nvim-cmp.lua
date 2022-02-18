@@ -66,7 +66,8 @@ cmp.setup {
 				path = "[Path]",
 				look = "[Look]",
 				cmp_tabnine = "[T9]",
-				ultisnips = "[Snippet]",
+
+				-- ultisnips = "[Snippet]",
 				treesitter = "[Treesitter]",
 				calc = "[Clac]",
 				emoji = "[Emoji]",
@@ -84,7 +85,8 @@ cmp.setup {
 		{name = "look"},
 		{name = "nvim_lua"},
 		{name = "cmp_tabnine"},
-		{name = "ultisnips"},
+
+		-- {name = "ultisnips"},
 		{name = "treesitter"},
 		{name = "calc"},
 		{name = "latex_symbols"},
@@ -112,7 +114,7 @@ require('lspkind').init({
 	-- enables text annotations
 	--
 	-- default: true
-	with_text = true,
+	mode = 'symbol_text',
 
 	-- default symbol map
 	-- can be either 'default' (requires nerd-fonts font) or

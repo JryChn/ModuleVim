@@ -7,9 +7,7 @@ local use = packer.use
 packer.reset()
 
 -----------------------start to loading plugins--------------
-packer.init({
-  max_jobs=4
-})
+packer.init({max_jobs = 4})
 packer.startup(function(use)
 	use 'wbthomason/packer.nvim'
 
