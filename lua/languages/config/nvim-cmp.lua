@@ -67,7 +67,6 @@ cmp.setup {
 				look = "[Look]",
 				cmp_tabnine = "[T9]",
 
-				-- ultisnips = "[Snippet]",
 				treesitter = "[Treesitter]",
 				calc = "[Clac]",
 				emoji = "[Emoji]",
@@ -82,11 +81,10 @@ cmp.setup {
 		{name = "buffer"},
 		{name = "vsnip"},
 		{name = "path"},
-		{name = "look"},
+		{name = "look", keyword_length = 2,option = {convert_case = true,loud = true}},
 		{name = "nvim_lua"},
 		{name = "cmp_tabnine"},
 
-		-- {name = "ultisnips"},
 		{name = "treesitter"},
 		{name = "calc"},
 		{name = "latex_symbols"},
