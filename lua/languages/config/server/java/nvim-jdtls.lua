@@ -34,7 +34,7 @@ function M.setup()
 	vim.api.nvim_set_keymap(
 		'n',
 		'gI',
-		'<cmd>lua vim.lsp.buf.implementation()<CR>',
+		'<cmd>lua require"telescope.builtin".lsp_implementations()<CR>',
 		{silent = true, noremap = true}
 	)
 	vim.api.nvim_set_keymap(

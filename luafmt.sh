@@ -30,4 +30,4 @@ else
     fi
 fi
     getdir .
-    rm luafmt -rf
+    rm -rf luafmt

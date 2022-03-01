@@ -218,11 +218,6 @@ packer.startup(function(use)
 				after = "nvim-cmp",
 				event = "InsertCharPre"
 			},
-			{
-				'quangnguyen30192/cmp-nvim-ultisnips',
-				after = "nvim-cmp",
-				event = "InsertCharPre"
-			},
 			{'hrsh7th/cmp-emoji', after = "nvim-cmp", event = "InsertCharPre"},
 			{'f3fora/cmp-spell', after = "nvim-cmp", event = "InsertCharPre"},
 			{

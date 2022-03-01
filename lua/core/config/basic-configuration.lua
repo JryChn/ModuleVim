@@ -91,7 +91,7 @@ global_local = {
 	spelllang = "en_us,cjk",
 
 	-- optimize startup time
-	shell = "/bin/bash",
+	shell = "/opt/homebrew/bin/fish",
 	shadafile = "",
 	lazyredraw = true
 }
