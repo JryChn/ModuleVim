@@ -38,13 +38,13 @@ packer.startup(function(use)
 		end
 	}
 
-	--[[ use { TODO: not use it to improve performance
+	use {
 		--a smooth scrolling neovim plugin written in lua
 		'karb94/neoscroll.nvim',
 		config = function()
 			require 'neoscroll'.setup()
 		end
-	} ]]
+	}
 	use {
 		--provide a single command that deletes the current buffer
 		'mhinz/vim-sayonara',
@@ -174,8 +174,10 @@ packer.startup(function(use)
 			{'williamboman/nvim-lsp-installer', after = 'nvim-lspconfig'},
 			{'tami5/lspsaga.nvim', after = 'nvim-lspconfig'},
 			{'mfussenegger/nvim-jdtls', after = 'nvim-lspconfig'},
+			{'p00f/clangd_extensions.nvim', after = 'nvim-lspconfig'},
 			{'jose-elias-alvarez/nvim-lsp-ts-utils', after = 'nvim-lspconfig'},
 			{'jose-elias-alvarez/null-ls.nvim', after = 'nvim-lspconfig'},
+			{'folke/trouble.nvim', after = 'nvim-lspconfig'},
 		},
 		config = function()
 			require 'languages.config.nvim-lspconfig'
@@ -253,13 +255,6 @@ packer.startup(function(use)
 		-- event = 'BufferRead'
 	}
 
-	--use{ --formatter TODO: Not use now, instead by lsp
-	--'mhartington/formatter.nvim',
-	--config = function()
-	--require'languages.config.formatter'
-	--end
-	--}
-	--------------------------------
 	----------NOTE:style layer-----------
 	use {
 		'projekt0n/github-nvim-theme',

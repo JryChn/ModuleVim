@@ -13,6 +13,10 @@ vim.cmd([[
 ]])
 
 -- --------------configuration------------------
+local sh = "bash"
+if vim.fn.executable('fish') == 1 then
+	sh = "fish"
+end
 global_local = {
 	termguicolors = true,
 	mouse = "nv",
@@ -91,7 +95,7 @@ global_local = {
 	spelllang = "en_us,cjk",
 
 	-- optimize startup time
-	shell = "/opt/homebrew/bin/fish",
+	shell = sh,
 	shadafile = "",
 	lazyredraw = true
 }

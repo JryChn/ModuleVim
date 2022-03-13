@@ -1,4 +1,3 @@
-local tree_cb = require 'nvim-tree.config'.nvim_tree_callback
 local list = {
 	{key = {"<CR>", "o", "l"}, action = "edit"},
 	{key = {"<C-]>"}, action = "cd"},
