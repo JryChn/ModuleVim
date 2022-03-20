@@ -164,7 +164,9 @@ local lspservers = {
 	"vue:vuels",
 	"yaml:yamlls",
 	"xml:lemminx",
-	"emmet:emmet_ls"
+	"yaml:yamlls",
+	"emmet:emmet_ls",
+	"docker:dockerls"
 }
 vim.cmd 'packadd nvim-lsp-installer'
 
@@ -201,13 +203,6 @@ local lsp_installer = require("nvim-lsp-installer")
 
 vim.cmd('packadd null-ls.nvim')
 
-require("null-ls").setup({
-	sources = {
-		-- require("null-ls").builtins.formatting.stylua,
-		require("null-ls").builtins.diagnostics.eslint,
-	},
-})
-
 lsp_installer.on_server_ready(function(server)
 	local opts = {
 		autostart = true,
@@ -217,6 +212,27 @@ lsp_installer.on_server_ready(function(server)
 		},
 		capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 	}
+
+	require("null-ls").setup({
+		sources = {
+			-- require("null-ls").builtins.formatting.stylua,
+			require("null-ls").builtins.diagnostics.eslint_d,
+			require("null-ls").builtins.code_actions.eslint_d,
+			require("null-ls").builtins.formatting.prettier,
+		},
+		on_attach = on_attach
+	})
+
+	--special language emmet_ls
+	if server.name == "emmet_ls" then
+		opts.filetypes = {
+			"html",
+			"css",
+			"typescriptreact",
+			"javascriptreact",
+			"javascript.jsx"
+		}
+	end
 
 	-- special language lua
 	if server.name == "sumneko_lua" then

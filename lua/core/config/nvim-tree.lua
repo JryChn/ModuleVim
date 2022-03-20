@@ -9,7 +9,12 @@ local list = {
 	{key = "P", action = "parent_node"},
 	{key = "<BS>", action = "close_node"},
 	{key = "h", action = "close_node"},
-	{key = "<Tab>", action_cb = ":wincmd w<CR>"},
+	{
+		key = "<Tab>",
+		action_cb = function()
+			vim.cmd(":wincmd w<CR>")
+		end
+	},
 	{key = "K", action = "first_sibling"},
 	{key = "J", action = "last_sibling"},
 	{key = "I", action = "toggle_ignored"},
@@ -30,6 +35,9 @@ local list = {
 	{key = "-", action = "dir_up"},
 	{key = "q", action = "close"},
 	{key = "?", action = "toggle_help"},
+	{key = "<C-k>", action = "toggle_file_info"},
+
+	-- {key = "<K>", action = "preview"},
 }
 
 --------------------------------------------------------------------------------------
@@ -40,6 +48,14 @@ vim.api.nvim_set_keymap(
 	":NvimTreeToggle<CR>",
 	{noremap = true, silent = true}
 )
+vim.api.nvim_set_keymap(
+	"n",
+	"<space>ft",
+	":NvimTreeFindFile<CR>",
+	{noremap = true, silent = true}
+)
+vim.cmd 'packadd which-key.nvim'
+require "which-key".register({["<space>ft"] = {name = "focus this file on tree"}})
 require 'nvim-tree'.setup {
 	-- closes neovim automatically when the tree is the last **WINDOW** in the view
 	auto_close = true,
