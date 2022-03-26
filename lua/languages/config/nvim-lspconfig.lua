@@ -142,6 +142,11 @@ local on_attach = function(client, bufnr)
 		noremap = true,
 		silent = true
 	})
+
+	if client.name == "html" then
+		client.resolved_capabilities.document_formatting = false
+		client.resolved_capabilities.document_range_formatting = false
+	end
 end
 
 -----------------------------------------------------------
