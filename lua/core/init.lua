@@ -61,10 +61,10 @@ packer.startup(function(use)
 		end
 	}
 	use {
-		--provide a single command that deletes the current buffer
+		-- colorful displaying
 		'norcalli/nvim-colorizer.lua',
 		config = function()
-			require 'colorizer'.setup()
+			require 'colorizer'.setup({lowercase = true, {css = true, css_fn = true}})
 		end,
 
 		-- event = "BufWinEnter"
