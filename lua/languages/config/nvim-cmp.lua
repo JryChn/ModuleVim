@@ -77,8 +77,9 @@ cmp.setup {
 	},
 	sources = {
 		{name = "nvim_lsp"},
-		{name = "buffer"},
 		{name = "vsnip"},
+		{name = "buffer"},
+		{name = "cmp_tabnine"},
 		{name = "path"},
 		{
 			name = "look",
@@ -86,7 +87,6 @@ cmp.setup {
 			option = {convert_case = true, loud = true}
 		},
 		{name = "nvim_lua"},
-		{name = "cmp_tabnine"},
 		{name = "treesitter"},
 		{name = "calc"},
 		{name = "latex_symbols"},
