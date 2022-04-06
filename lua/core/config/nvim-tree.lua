@@ -9,12 +9,7 @@ local list = {
 	{key = "P", action = "parent_node"},
 	{key = "<BS>", action = "close_node"},
 	{key = "h", action = "close_node"},
-	{
-		key = "<Tab>",
-		action_cb = function()
-			vim.cmd(":wincmd w<CR>")
-		end
-	},
+	{key = "<Tab>", action = ""},
 	{key = "K", action = "first_sibling"},
 	{key = "J", action = "last_sibling"},
 	{key = "I", action = "toggle_ignored"},
@@ -57,8 +52,6 @@ vim.api.nvim_set_keymap(
 vim.cmd 'packadd which-key.nvim'
 require "which-key".register({["<space>ft"] = {name = "focus this file on tree"}})
 require 'nvim-tree'.setup {
-	-- closes neovim automatically when the tree is the last **WINDOW** in the view
-	auto_close = true,
 	view = {
 		-- width of the window, can be either a number (columns) or a string in `%`
 		width = 26,
@@ -101,3 +94,6 @@ g.nvim_tree_icons = {
 	},
 	folder = {default = "", open = "", symlink = ""}
 }
+
+-- closes neovim automatically when the tree is the last **WINDOW** in the view
+vim.cmd("autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif")

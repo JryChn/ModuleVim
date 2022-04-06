@@ -14,9 +14,11 @@ vim.cmd([[
 
 -- --------------configuration------------------
 local sh = "bash"
-if vim.fn.executable('fish') == 1 then
+
+-- HINT: this will lag the nvim-tree, uncomment it when upstream fix it
+--[[ if vim.fn.executable('fish') == 1 then
 	sh = "fish"
-end
+end ]]
 global_local = {
 	termguicolors = true,
 	mouse = "nv",

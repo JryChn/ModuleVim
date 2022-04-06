@@ -143,9 +143,14 @@ local on_attach = function(client, bufnr)
 		silent = true
 	})
 
-	if client.name == "html" then
-		client.resolved_capabilities.document_formatting = false
-		client.resolved_capabilities.document_range_formatting = false
+	--NOTE: define the auto format on save
+	if client.resolved_capabilities.document_formatting then
+		vim.cmd([[
+            augroup LspFormatting
+                autocmd! * <buffer>
+                autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
+            augroup END
+            ]])
 	end
 end
 
@@ -218,16 +223,6 @@ lsp_installer.on_server_ready(function(server)
 		capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 	}
 
-	require("null-ls").setup({
-		sources = {
-			-- require("null-ls").builtins.formatting.stylua,
-			require("null-ls").builtins.diagnostics.eslint_d,
-			require("null-ls").builtins.code_actions.eslint_d,
-			require("null-ls").builtins.formatting.prettier,
-		},
-		on_attach = on_attach
-	})
-
 	--special language emmet_ls
 	if server.name == "emmet_ls" then
 		opts.filetypes = {
@@ -246,6 +241,18 @@ lsp_installer.on_server_ready(function(server)
 
 	-- special language typescript
 	if server.name == "tsserver" then
+		require("null-ls").setup({
+			sources = {
+				require("null-ls").builtins.diagnostics.eslint_d,
+				require("null-ls").builtins.code_actions.eslint_d,
+				require("null-ls").builtins.formatting.prettier,
+			},
+			on_attach = on_attach
+		})
+		require 'nvim-treesitter.configs'.setup {
+			context_commentstring = {enable = true}
+		}
+
 		if vim.fn.executable('npm') ~= 1 then
 			print("npm was not found" .. "\n")
 		else
@@ -316,15 +323,4 @@ vim.cmd("hi HintText cterm=underline gui=undercurl guisp=#2c6e4e")
 vim.cmd("hi InformationText cterm=underline gui=undercurl guisp=#0db9d7")
 vim.cmd("hi CursorWord0 ctermbg=239 guibg=#3d3c3b")
 vim.cmd("hi SpellBad cterm=underline gui=undercurl guisp=None") ]]
-
---NOTE: define the auto format on save
-vim.api.nvim_exec(
-	[[
-augroup FormatAutogroup
-  autocmd!
-  autocmd BufWritePost * lua vim.lsp.buf.formatting()
-augroup END
-]],
-	true
-)
 

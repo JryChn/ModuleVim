@@ -176,6 +176,10 @@ packer.startup(function(use)
 			{'mfussenegger/nvim-jdtls', after = 'nvim-lspconfig'},
 			{'p00f/clangd_extensions.nvim', after = 'nvim-lspconfig'},
 			{'jose-elias-alvarez/nvim-lsp-ts-utils', after = 'nvim-lspconfig'},
+			{
+				'JoosepAlviste/nvim-ts-context-commentstring',
+				after = 'nvim-lspconfig'
+			},
 			{'jose-elias-alvarez/null-ls.nvim', after = 'nvim-lspconfig'},
 			{'folke/trouble.nvim', after = 'nvim-lspconfig'},
 		},
