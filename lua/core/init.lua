@@ -64,7 +64,7 @@ packer.startup(function(use)
 		-- colorful displaying
 		'norcalli/nvim-colorizer.lua',
 		config = function()
-			require 'colorizer'.setup({lowercase = true, {css = true, css_fn = true}})
+			require 'colorizer'.setup()
 		end,
 
 		-- event = "BufWinEnter"
@@ -407,15 +407,25 @@ packer.startup(function(use)
 		end,
 		event = "BufRead"
 	}
+	use {
+		--dims your inactive windows, making it easier to see the active window at a glance.
+		"sunjon/shade.nvim",
+		config = function()
+			require 'shade'.setup({
+				overlay_opacity = 50,
+				opacity_step = 1,
+			})
+		end,
+		event = "BufRead"
+	}
 
-	--[[ use{ -- add zen mode  TODO: add it later
-    "folke/zen-mode.nvim",
-    cmd = "ZenMode",
-    event = "BufRead",
-    config = function ()
-        require 'plugins.config.zen-mode'
-    end
-        } ]]
+	use {
+		-- add zen mode
+		"folke/zen-mode.nvim",
+		config = function()
+			require 'plugins.config.zen-mode'
+		end
+	}
 	use {
 		--markdown preview plugins
 		"davidgranstrom/nvim-markdown-preview"

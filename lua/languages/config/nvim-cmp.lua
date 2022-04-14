@@ -41,7 +41,8 @@ cmp.setup {
 			vim.fn["vsnip#anonymous"](args.body)
 		end
 	},
-	mapping = {
+	window = {},
+	mapping = cmp.mapping.preset.insert({
 		["<Tab>"] = cmp.mapping(tab_complete, {"i", "s"}),
 		["<C-j>"] = cmp.mapping(tab_complete, {"i", "s"}),
 		["<S-Tab>"] = cmp.mapping(s_tab_complete, {"i", "s"}),
@@ -50,7 +51,7 @@ cmp.setup {
 			select = false
 		},
 		["<C-k>"] = cmp.mapping(s_tab_complete, {"i", "s"})
-	},
+	}),
 	formatting = {
 		format = function(entry, vim_item)
 			-- fancy icons and a name of kind
@@ -75,7 +76,7 @@ cmp.setup {
 			return vim_item
 		end,
 	},
-	sources = {
+	sources = cmp.config.sources({
 		{name = "nvim_lsp"},
 		{name = "vsnip"},
 		{name = "buffer"},
@@ -107,7 +108,7 @@ cmp.setup {
 		nvim_lua = {kind = "", priority = 9, true},
 		tabnine = {priority = 9, true},
 		emoji = {kind = "", priority = 9, true} ]]
-	}
+	})
 }
 
 require('lspkind').init({

@@ -177,6 +177,14 @@ function M.setup()
 			end,
 		}):find()
 	end ]]
+	local function change_date_path(path, workspace)
+		local i = 0
+		while (path[i] ~= "-data") do
+			i = i + 1
+		end
+		path[i + 1] = workspace
+		return path
+	end
 
 	local root_markers = {'gradlew', 'pom.xml', '.git'}
 	local root_dir = require('jdtls.setup').find_root(root_markers)
@@ -185,9 +193,12 @@ function M.setup()
 		":p:h:t"
 	)
 	vim.env.WORKSPACE = workspace_folder
+	local workspace = require "nvim-lsp-installer.path".concat {
+		workspace_folder,
+		vim.fn.fnamemodify(vim.loop.cwd() or vim.fn.getcwd(), ":p:h:t")
+	}
 	local ok, install_cmd = require 'nvim-lsp-installer.servers'.get_server("jdtls")
 	if ok then
-		print(ok)
 		if not install_cmd:is_installed() then
 			install_cmd:install()
 		end
@@ -198,7 +209,7 @@ function M.setup()
 	end
 
 	local config = {
-		cmd = install_cmd:get_default_options().cmd,
+		cmd = change_date_path(install_cmd:get_default_options().cmd, workspace),
 		root_dir = root_dir,
 		flags = {allow_incremental_sync = true},
 		on_attach = on_attach,
