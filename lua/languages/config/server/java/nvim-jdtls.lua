@@ -116,6 +116,12 @@ function M.setup()
 		{silent = true, noremap = true}
 	)
 	vim.api.nvim_set_keymap(
+		'v',
+		'<space>bf',
+		'<cmd>lua vim.lsp.buf.formatting()<CR>',
+		{silent = true, noremap = true}
+	)
+	vim.api.nvim_set_keymap(
 		'n',
 		'<space>lcv',
 		'<cmd>lua require(\'jdtls\').extract_variable()<CR>',
@@ -151,6 +157,14 @@ function M.setup()
 	require "which-key".register({["<space>lcv"] = {name = "extract_variable"}})
 	require "which-key".register({["<space>lcc"] = {name = "extract_constant"}})
 	require "which-key".register({["<space>lcm"] = {name = "extract_method"}})
+
+	vim.cmd([[
+            augroup LspFormatting
+                autocmd! * <buffer>
+		    autocmd FileType java 
+               \ autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
+            augroup END
+            ]])
 
 	--[[ require('jdtls.ui').pick_one_async = function(items, prompt, label_fn, cb)
 		local opts = {};

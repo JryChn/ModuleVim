@@ -15,6 +15,12 @@ vim.api.nvim_set_keymap("n", "\\s", ":BufferPick<CR>", {silent = true})
 vim.api.nvim_set_keymap("n", "\\e", ":enew<CR>", {silent = true})
 vim.api.nvim_set_keymap(
 	"n",
+	"\\C",
+	":BufferCloseAllButCurrent<CR>",
+	{silent = true}
+)
+vim.api.nvim_set_keymap(
+	"n",
 	"\\b",
 	":BufferOrderByLanguage<CR>",
 	{silent = true}
