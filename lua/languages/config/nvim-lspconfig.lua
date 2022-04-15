@@ -143,6 +143,12 @@ local on_attach = function(client, bufnr)
 		silent = true
 	})
 
+
+    if client.name == "html" or client.name == "jsonls" then
+ 		client.resolved_capabilities.document_formatting = false
+ 		client.resolved_capabilities.document_range_formatting = false
+ 	end
+
 	--NOTE: define the auto format on save
 	if client.resolved_capabilities.document_formatting then
 		vim.cmd([[
