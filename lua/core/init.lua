@@ -244,7 +244,7 @@ packer.startup(function(use)
 		end
 	}
 
-	use {
+	--[[ use {
 		--debug plugin
 		"mfussenegger/nvim-dap",
 		requires = {
@@ -257,7 +257,7 @@ packer.startup(function(use)
 		end,
 
 		-- event = 'BufferRead'
-	}
+	} ]]
 
 	----------NOTE:style layer-----------
 	use {

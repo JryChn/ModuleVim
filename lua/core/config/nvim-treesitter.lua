@@ -4,7 +4,32 @@ vim.api.nvim_command("set foldexpr=nvim_treesitter#foldexpr()")
 ----------------------------------------------------------------
 
 require 'nvim-treesitter.configs'.setup {
-	ensure_installed = "maintained",
+	ensure_installed = {
+		"c",
+		"lua",
+		"rust",
+		"java",
+		"go",
+		"python",
+		"bash",
+		"cmake",
+		"cpp",
+		"css",
+		"dockerfile",
+		"fish",
+		"gomod",
+		"html",
+		"http",
+		"kotlin",
+		"make",
+		"markdown",
+		"markdown_inline",
+		"php",
+		"toml",
+		"yaml",
+		"xml",
+		"vue"
+	},
 	highlight = {enable = true},
 	indent = {enable = true},
 	autotag = {enable = true},
