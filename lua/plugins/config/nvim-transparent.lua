@@ -1,8 +1,6 @@
 vim.api.nvim_set_keymap('n', '<space>tp', "<cmd>TransparentToggle<cr>", {})
 vim.g.transparent_enabled = 0
 require("transparent").setup({
-	enable = true,
-
 	-- boolean: enable transparent
 	extra_groups = {
 		-- table/string: additional groups that should be clear
@@ -16,7 +14,7 @@ require("transparent").setup({
     "BufferLineSeparator",
     "BufferLineIndicatorSelected", ]]
 	},
-	exclude = {},
+	exclude_group = {},
 
 	-- table: groups you don't want to clear
 })
