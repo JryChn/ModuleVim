@@ -35,5 +35,11 @@ transparent style
 For now, ModuleVim supports some common used languages, you can also add
 language by `:LspInstall $language`
 
+## use
 
+copy modulevim dictionary into your config path and then
+
+```
+ln -s modulevim ~/.config/nvim
+```
 have fun
