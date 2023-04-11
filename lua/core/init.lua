@@ -111,7 +111,7 @@ packer.startup(function(use)
 		branch = 'main',
 		requires = {
 			{'kyazdani42/nvim-web-devicons'},
-			{"SmiteshP/nvim-gps"},
+			{"SmiteshP/nvim-navic"},
 		},
 		config = function()
 			require 'core.config.galaxyline'
