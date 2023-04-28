@@ -1,6 +1,6 @@
 local gl = require("galaxyline")
 local gls = gl.section
-require 'nvim-gps'.setup()
+require 'nvim-navic'.setup()
 
 gl.short_line_list = {
 	"NvimTree",
@@ -62,12 +62,12 @@ gls.left[4] = {
 }
 
 gls.left[5] = {
-	nvimGPS = {
+	nvimNavic = {
 		provider = function()
-			return require('nvim-gps').get_location()
+			return require('nvim-navic').get_location()
 		end,
 		condition = function()
-			return require('nvim-gps').is_available()
+			return require('nvim-navic').is_available()
 		end
 	}
 }
