@@ -27,9 +27,10 @@ require 'nvim-treesitter.configs'.setup {
 		"php",
 		"toml",
 		"yaml",
--- 		due to treesitter pr:https://github.com/nvim-treesitter/nvim-treesitter/pull/3297
---         use html to parse xml
--- 		"xml",
+
+		-- 		due to treesitter pr:https://github.com/nvim-treesitter/nvim-treesitter/pull/3297
+		--         use html to parse xml
+		-- 		"xml",
 		"vue"
 	},
 	highlight = {enable = true},
