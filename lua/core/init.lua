@@ -171,7 +171,7 @@ packer.startup(function(use)
 		--language service protocol client
 		'neovim/nvim-lspconfig',
 		requires = {
-			{'williamboman/nvim-lsp-installer', after = 'nvim-lspconfig'},
+			{'"williamboman/mason.nvim"', after = 'nvim-lspconfig'},
 			{'tami5/lspsaga.nvim', after = 'nvim-lspconfig'},
 			{'mfussenegger/nvim-jdtls', after = 'nvim-lspconfig'},
 			{'p00f/clangd_extensions.nvim', after = 'nvim-lspconfig'},
