@@ -183,7 +183,7 @@ local lspservers = {
 	"emmet:emmet_ls",
 	"docker:dockerls"
 }
-vim.cmd 'packadd nvim-lsp-installer'
+vim.cmd 'packadd mason'
 
 local function split(s, delimiter)
 	local result = {};
@@ -214,7 +214,7 @@ end
 
 -- use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local lsp_installer = require("nvim-lsp-installer")
+local lsp_installer = require("mason")
 
 vim.cmd('packadd null-ls.nvim')
 
