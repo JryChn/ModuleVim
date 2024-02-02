@@ -8,36 +8,6 @@ function M.setup()
 		{silent = true}
 	)
 	vim.api.nvim_set_keymap(
-		"i",
-		"<C-s>",
-		"<Esc>:w! | lua require'jdtls'.organize_imports()<CR>",
-		{noremap = true}
-	)
-	vim.api.nvim_set_keymap(
-		"n",
-		"<C-s>",
-		":w! | lua require'jdtls'.organize_imports()<CR>",
-		{noremap = true}
-	)
-	vim.api.nvim_set_keymap(
-		'n',
-		'gD',
-		'<cmd>lua vim.lsp.buf.declaration()<CR>',
-		{silent = true, noremap = true}
-	)
-	vim.api.nvim_set_keymap(
-		'n',
-		'K',
-		'<cmd>lua vim.lsp.buf.hover()<CR>',
-		{silent = true, noremap = true}
-	)
-	vim.api.nvim_set_keymap(
-		'n',
-		'gI',
-		'<cmd>lua require"telescope.builtin".lsp_implementations()<CR>',
-		{silent = true, noremap = true}
-	)
-	vim.api.nvim_set_keymap(
 		'n',
 		'<C-k>',
 		'<cmd>lua vim.lsp.buf.signature_help()<CR>',
