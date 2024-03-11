@@ -151,7 +151,7 @@ function M.setup()
 		'<cmd>lua lua require(\'jdtls\').extract_method(true)<CR>',
 		{silent = true, noremap = true}
 	)
-	vim.cmd 'packadd which-key.nvim'
+	vim.cmd ' packadd which-key.nvim'
 	require "which-key".register({["<space>lR"] = {name = "refactor"}})
 	require "which-key".register({["<space>lc"] = {name = "extract"}})
 	require "which-key".register({["<space>lcv"] = {name = "extract_variable"}})
