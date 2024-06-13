@@ -158,7 +158,6 @@ wk.register({
 	["<space>gl"] = {name = "toggle line blame"},
 	["<space>g["] = {name = "previous hunk"},
 	["<space>g]"] = {name = "next hunk"},
-	["<space>gd"] = {name = "show diff"},
 
 	----------------------------------
 	["<space>sb"] = {name = "search in buffer"},

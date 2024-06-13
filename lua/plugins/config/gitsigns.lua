@@ -4,6 +4,7 @@
 
 require 'gitsigns'.setup({
 	numhl = true,
+	linehl = true,
 	keymaps = {
 		-- Default keymap options
 		noremap = true,
@@ -25,7 +26,6 @@ require 'gitsigns'.setup({
 		['n <space>gR'] = '<cmd>lua require"gitsigns".reset_buffer()<CR>',
 		['n <space>gp'] = '<cmd>lua require"gitsigns".preview_hunk()<CR>',
 		['n <space>gb'] = '<cmd>lua require"gitsigns".blame_line(true)<CR>',
-		['n <space>gd'] = '<cmd>lua require"gitsigns".diffthis("~")<CR>',
 		['n <space>gl'] = '<cmd>Gitsigns toggle_current_line_blame<CR>',
 
 		-- Text objects
