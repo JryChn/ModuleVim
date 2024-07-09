@@ -134,6 +134,10 @@ local on_attach = function(client, bufnr)
 		'<cmd>lua require\'lspsaga.diagnostic\'.show_line_diagnostics()<CR>',
 		{noremap = true, silent = true}
 	)
+	buf_set_keymap('n', '<space>lq', '<cmd>TroubleToggle quickfix<CR>', {
+		noremap = true,
+		silent = true
+	})
 	buf_set_keymap("n", "<space>bf", "<cmd>lua vim.lsp.buf.formatting()<CR>", {
 		noremap = true,
 		silent = true
@@ -151,6 +155,7 @@ local lspservers = {
 	"bash:bashls",
 	"css:cssls",
 	"html:html",
+	"typescript:tsserver",
 	"json:jsonls",
 	"python:pyright",
 	"rust:rust_analyzer",
@@ -159,11 +164,9 @@ local lspservers = {
 	"vue:vuels",
 	"yaml:yamlls",
 	"xml:lemminx",
-	"emmet:emmet_ls",
-
-	-- "typescript:tsserver",
+	"emmet:emmet_ls"
 }
-vim.cmd ' packadd nvim-lsp-installer'
+vim.cmd 'packadd nvim-lsp-installer'
 
 local function split(s, delimiter)
 	local result = {};
@@ -196,6 +199,15 @@ end
 -- map buffer local keybindings when the language server attaches
 local lsp_installer = require("nvim-lsp-installer")
 
+vim.cmd('packadd null-ls.nvim')
+
+require("null-ls").setup({
+	sources = {
+		-- require("null-ls").builtins.formatting.stylua,
+		require("null-ls").builtins.diagnostics.eslint,
+	},
+})
+
 lsp_installer.on_server_ready(function(server)
 	local opts = {
 		autostart = true,
@@ -206,13 +218,13 @@ lsp_installer.on_server_ready(function(server)
 		capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 	}
 
+	-- special language lua
 	if server.name == "sumneko_lua" then
 		opts.settings = {Lua = {diagnostics = {globals = {'vim'}}}}
 	end
+
+	-- special language typescript
 	if server.name == "tsserver" then
-		vim.cmd ' packadd null-ls.nvim'
-		require("null-ls").config {}
-		require("lspconfig")["null-ls"].setup {}
 		if vim.fn.executable('npm') ~= 1 then
 			print("npm was not found" .. "\n")
 		else
@@ -233,13 +245,17 @@ lsp_installer.on_server_ready(function(server)
 		opts.on_attach = require('languages.config.server.typescript.tsserver').setup(on_attach)
 	end
 
-	if server.name == "jdtls" then
+	if server.name == "jdtls" or server.name == 'clangd' then
 		goto
 		continue
 	end
+
+	-- Other default languages
 	server:setup(opts)
 	vim.cmd("bufdo e")::continue::
 end)
+
+-- special language java
 vim.api.nvim_exec(
 	[[
 			augroup jdtls_lsp
@@ -249,6 +265,10 @@ vim.api.nvim_exec(
             ]],
 	false
 )
+
+-- specical language c/cpp
+vim.cmd 'packadd clangd_extensions.nvim'
+require("clangd_extensions").setup()
 
 -- NOTE: finally, setup lsp saga and config
 vim.cmd ' packadd lspsaga.nvim'
