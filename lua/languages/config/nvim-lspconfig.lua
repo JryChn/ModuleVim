@@ -166,7 +166,7 @@ local lspservers = {
 	"xml:lemminx",
 	"emmet:emmet_ls"
 }
-vim.cmd 'packadd nvim-lsp-installer'
+-- vim.cmd 'packadd nvim-lsp-installer'
 
 local function split(s, delimiter)
 	local result = {};

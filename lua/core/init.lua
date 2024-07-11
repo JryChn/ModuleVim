@@ -172,7 +172,7 @@ packer.startup(function(use)
 		--language service protocol client
 		'neovim/nvim-lspconfig',
 		requires = {
-			{'"williamboman/mason.nvim"', after = 'nvim-lspconfig',run = ":MasonUpdate"},
+			{'williamboman/mason.nvim', after = 'nvim-lspconfig',run = ":MasonUpdate"},
 			{'tami5/lspsaga.nvim', after = 'nvim-lspconfig'},
 			{'mfussenegger/nvim-jdtls', after = 'nvim-lspconfig'},
 			{'p00f/clangd_extensions.nvim', after = 'nvim-lspconfig'},
@@ -437,6 +437,10 @@ packer.startup(function(use)
 		"MattesGroeger/vim-bookmarks"
 	}
 
+	use {
+		--Github Copilot
+		"github/copilot.vim"
+	}
 	--------------------------------
 end)
 require 'packer'.install()
