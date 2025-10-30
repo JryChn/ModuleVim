@@ -26,10 +26,15 @@ M.on_attach = function(_, bufnr)
   if builtin_ok then
     vim.keymap.set("n", "gr", builtin.lsp_references, opts)
     vim.keymap.set("n", "gi", builtin.lsp_implementations, opts)
+    vim.keymap.set("n", "<space>ld", builtin.lsp_definitions, opts)
   else
     vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
     vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+    vim.keymap.set("n", "<space>ld", vim.lsp.buf.definition, opts)
   end
+
+  -- Hover on gh for parity with your old mapping
+  vim.keymap.set("n", "gh", vim.lsp.buf.hover, opts)
 
   -- Trouble shortcuts (safe even if Trouble not installed; user can override)
   vim.keymap.set("n", "<space>lq", "<cmd>TroubleToggle quickfix<CR>", opts)

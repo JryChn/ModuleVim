@@ -5,7 +5,8 @@ return {
   config = function()
     local alpha = require("alpha")
     local dashboard = require("alpha.themes.dashboard")
-    dashboard.section.header.val = {
+    local ok, banner = pcall(require, "style.banner")
+    dashboard.section.header.val = ok and banner or {
       "",
       "  Welcome to ModuleVim",
       "",
@@ -18,5 +19,7 @@ return {
     }
     dashboard.section.footer.val = "  Powered by lazy.nvim"
     alpha.setup(dashboard.config)
+    -- Keymap to open the dashboard
+    vim.keymap.set("n", "<leader>aa", ":Alpha<CR>", { desc = "Alpha (welcome)" })
   end,
 }

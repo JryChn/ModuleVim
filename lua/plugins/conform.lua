@@ -31,6 +31,10 @@ return {
     vim.api.nvim_create_user_command("FormatEnable", function()
       vim.g.disable_autoformat = false
     end, { desc = "Enable autoformat-on-save" })
-    vim.keymap.set({"n","v"}, "<leader>f", function() require("conform").format({ async = true }) end, { desc = "Format buffer" })
+    local function do_format()
+      require("conform").format({ async = true })
+    end
+    vim.keymap.set({"n","v"}, "<leader>f", do_format, { desc = "Format buffer" })
+    vim.keymap.set({"n"}, "<leader>bf", do_format, { desc = "Format this buffer" })
   end,
 }
