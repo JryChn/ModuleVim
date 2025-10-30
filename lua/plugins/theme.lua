@@ -1,28 +1,13 @@
 return {
   {
-    -- Colorschemes you used before
+    -- Host spec for theme init & keymaps (runs very early)
     "projekt0n/github-nvim-theme",
-    lazy = true,
-  },
-  { "sainnhe/gruvbox-material", lazy = true },
-  { "sainnhe/everforest", lazy = true },
-  { "Th3Whit3Wolf/onebuddy", lazy = true },
-  { "tjdevries/colorbuddy.vim", lazy = true },
-  { "tjdevries/gruvbuddy.nvim", lazy = true },
-  { "sainnhe/edge", lazy = true },
-
-  -- Theme manager and keymaps
-  {
-    name = "modulevim-theme-manager",
-    dir = "./lua/style",
-    -- We just need to run our theme setup on startup
-    priority = 1000, -- load before UI plugins
-    config = function()
+    priority = 1000,
+    lazy = false,
+    init = function()
       local theme = require("style")
-      -- Apply last used theme or a default
       theme.apply_current()
-
-      -- Keymaps
+      -- Keymaps for switching themes
       vim.keymap.set("n", "<leader>tc", theme.cycle, { desc = "Theme: cycle" })
       vim.keymap.set("n", "<leader>tc1", function() theme.set("github_dark") end, { desc = "Theme: GitHub Dark" })
       vim.keymap.set("n", "<leader>tc2", function() theme.set("gruvbox-material") end, { desc = "Theme: gruvbox-material" })
@@ -32,4 +17,10 @@ return {
       vim.keymap.set("n", "<leader>tc6", function() theme.set("edge") end, { desc = "Theme: edge" })
     end,
   },
+  { "sainnhe/gruvbox-material", lazy = true },
+  { "sainnhe/everforest", lazy = true },
+  { "Th3Whit3Wolf/onebuddy", lazy = true },
+  { "tjdevries/colorbuddy.vim", lazy = true },
+  { "tjdevries/gruvbuddy.nvim", lazy = true },
+  { "sainnhe/edge", lazy = true },
 }
