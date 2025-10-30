@@ -45,5 +45,3 @@ require 'nvim-treesitter.configs'.setup {
 	context_commentstring = {enable = true}
 }
 
-vim.cmd ' packadd spellsitter.nvim'
-require("spellsitter").setup({hl = 'SpellBad'})
